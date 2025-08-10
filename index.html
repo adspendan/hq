@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator HQ AI x Adspend Agency - AI-Powered Advertising Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+        }
+        
+        .accent-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tab-button {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-radius: 2px;
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .pricing-card.featured {
+            border-color: #3b82f6;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card:hover {
+            border-color: #3b82f6;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .badge {
+            background: #ef4444;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        .dashboard-preview {
+            background: #1e293b;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dashboard-header {
+            background: #0f172a;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .dashboard-metric {
+            background: #1e293b;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 10px;
+            border: 1px solid #334155;
+        }
+        
+        .metric-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+        
+        .metric-label {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+        
+        .ai-feature-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 24px;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 scroll-smooth">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-gradient">Operator HQ AI</span>
+                    <span class="mx-2 text-gray-400">x</span>
+                    <span class="text-xl font-medium text-gray-700">Adspend Agency</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#overview" class="tab-button text-gray-700 hover:text-blue-600 font-medium" onclick="showTab('overview')">Overview</a>
+                    <a href="#products" class="tab-button text-gray-700 hover:text-blue-600 font-medium" onclick="showTab('products')">Products</a>
+                    <a href="#case-studies" class="tab-button text-gray-700 hover:text-blue-600 font-medium" onclick="showTab('case-studies')">Case Studies</a>
+                    <a href="#pricing" class="tab-button text-gray-700 hover:text-blue-600 font-medium" onclick="showTab('pricing')">Pricing</a>
+                    <a href="#contact" class="tab-button text-gray-700 hover:text-blue-600 font-medium" onclick="showTab('contact')">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="showLoginModal()" class="text-gray-700 hover:text-blue-600 font-medium">Client Login</button>
+                    <button onclick="showDemoModal()" class="accent-gradient text-white px-6 py-2 rounded-lg hover:opacity-90 transition duration-300 font-medium">Book a Demo</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="badge floating">
+                        <i class="fas fa-rocket mr-1"></i> AI-Powered Advertising Solutions
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Transform Your Advertising with AI</h1>
+                    <p class="text-xl mb-8 opacity-90">Operator HQ AI combines cutting-edge artificial intelligence with expert ad management to deliver unprecedented ROI for your campaigns.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button onclick="showDemoModal()" class="bg-white text-blue-700 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition duration-300">
+                            Book a Demo
+                        </button>
+                        <button onclick="showTab('products')" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-white hover:text-blue-700 transition duration-300">
+                            Explore Products
+                        </button>
+                    </div>
+                    <div class="mt-6 flex items-center space-x-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>30-day ROI guarantee</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>No setup fees</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="dashboard-preview w-full max-w-md">
+                        <div class="dashboard-header">
+                            <div class="text-sm font-medium text-gray-300">Operator HQ AI Dashboard</div>
+                        </div>
+                        <div class="p-4">
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="dashboard-metric">
+                                    <div class="metric-value">$127K</div>
+                                    <div class="metric-label">Monthly Ad Spend</div>
+                                </div>
+                                <div class="dashboard-metric">
+                                    <div class="metric-value">4.2x</div>
+                                    <div class="metric-label">Average ROAS</div>
+                                </div>
+                                <div class="dashboard-metric">
+                                    <div class="metric-value">+67%</div>
+                                    <div class="metric-label">Conversion Rate</div>
+                                </div>
+                                <div class="dashboard-metric">
+                                    <div class="metric-value">-32%</div>
+                                    <div class="metric-label">CPA Reduction</div>
+                                </div>
+                            </div>
+                            <div class="mt-4 bg-slate-800 p-3 rounded-lg">
+                                <div class="text-xs text-gray-400 mb-1">AI Recommendation</div>
+                                <div class="text-sm text-white">Increase budget for top-performing ad set by 25% based on conversion patterns.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tab Navigation -->
+    <section class="bg-white shadow-sm sticky top-16 z-40">
+        <div class="container mx-auto px-6">
+            <div class="flex space-x-8 overflow-x-auto py-4">
+                <button onclick="showTab('overview')" class="tab-button active px-4 py-2 font-medium text-gray-700 whitespace-nowrap">
+                    Overview
+                </button>
+                <button onclick="showTab('products')" class="tab-button px-4 py-2 font-medium text-gray-700 whitespace-nowrap">
+                    Products
+                </button>
+                <button onclick="showTab('case-studies')" class="tab-button px-4 py-2 font-medium text-gray-700 whitespace-nowrap">
+                    Case Studies
+                </button>
+                <button onclick="showTab('pricing')" class="tab-button px-4 py-2 font-medium text-gray-700 whitespace-nowrap">
+                    Pricing
+                </button>
+                <button onclick="showTab('contact')" class="tab-button px-4 py-2 font-medium text-gray-700 whitespace-nowrap">
+                    Contact
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tab Content -->
+    <div class="container mx-auto px-6 py-12">
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Revolutionizing Digital Advertising</h2>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+                    <p class="text-lg mb-6 text-gray-700">
+                        Operator HQ AI x Adspend Agency combines cutting-edge artificial intelligence with decades of advertising expertise to deliver unprecedented results for our clients. Our AI-powered platform analyzes millions of data points in real-time to optimize campaigns, predict trends, and maximize ROI.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+                        <div class="text-center">
+                            <div class="ai-feature-icon accent-gradient mx-auto">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">AI-Powered Optimization</h3>
+                            <p class="text-gray-600">Our algorithms continuously optimize campaigns 24/7 for maximum performance</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="ai-feature-icon accent-gradient mx-auto">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Real-Time Analytics</h3>
+                            <p class="text-gray-600">Monitor campaign performance with our advanced dashboard and insights</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="ai-feature-icon accent-gradient mx-auto">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Precision Targeting</h3>
+                            <p class="text-gray-600">Reach your ideal customers with AI-driven audience segmentation</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="ai-feature-icon accent-gradient mx-auto">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Automated Management</h3>
+                            <p class="text-gray-600">Save time with automated bidding, budgeting, and campaign management</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center hover-lift">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">87%</div>
+                        <p class="text-gray-600">Average increase in conversion rates</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center hover-lift">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">4.2x</div>
+                        <p class="text-gray-600">Average return on ad spend (ROAS)</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center hover-lift">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">63%</div>
+                        <p class="text-gray-600">Reduction in cost per acquisition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Tab -->
+        <div id="products" class="tab-content">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Our AI-Powered Products</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6">
+                        <div class="ai-feature-icon accent-gradient">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Campaign Optimizer AI</h3>
+                        <p class="text-gray-600 mb-4">Automatically optimize your ad campaigns in real-time with our proprietary AI algorithms.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Real-time bid optimization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Budget allocation AI</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Performance prediction</span>
+                            </li>
+                        </ul>
+                        <button onclick="showProductModal('Campaign Optimizer AI')" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6">
+                        <div class="ai-feature-icon accent-gradient">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Audience Intelligence</h3>
+                        <p class="text-gray-600 mb-4">Discover and target high-value audiences with AI-powered customer segmentation.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Behavioral analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Lookalike audiences</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Customer journey mapping</span>
+                            </li>
+                        </ul>
+                        <button onclick="showProductModal('Audience Intelligence')" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6">
+                        <div class="ai-feature-icon accent-gradient">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Creative Analytics</h3>
+                        <p class="text-gray-600 mb-4">Analyze and optimize ad creative performance with AI-powered insights.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Creative scoring</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>A/B testing automation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Performance prediction</span>
+                            </li>
+                        </ul>
+                        <button onclick="showProductModal('Creative Analytics')" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6">
+                        <div class="ai-feature-icon accent-gradient">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Budget Master AI</h3>
+                        <p class="text-gray-600 mb-4">Optimize your advertising budget allocation with predictive analytics.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Budget forecasting</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>ROI optimization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Spend recommendations</span>
+                            </li>
+                        </ul>
+                        <button onclick="showProductModal('Budget Master AI')" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6">
+                        <div class="ai-feature-icon accent-gradient">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Cross-Platform Sync</h3>
+                        <p class="text-gray-600 mb-4">Manage campaigns across all platforms from a single AI-powered dashboard.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Multi-platform management</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Unified reporting</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Platform optimization</span>
+                            </li>
+                        </ul>
+                        <button onclick="showProductModal('Cross-Platform Sync')" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6">
+                        <div class="ai-feature-icon accent-gradient">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Report Generator AI</h3>
+                        <p class="text-gray-600 mb-4">Generate comprehensive, actionable reports with AI-powered insights.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Automated reporting</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Performance insights</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Customizable dashboards</span>
+                            </li>
+                        </ul>
+                        <button onclick="showProductModal('Report Generator AI')" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case Studies Tab -->
+        <div id="case-studies" class="tab-content">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Success Stories</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Case Study 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://via.placeholder.com/48" alt="E-commerce Brand" className="w-12 h-12 rounded-full mr-3">
+                            <div>
+                                <h3 className="text-lg font-bold">E-commerce Brand</h3>
+                                <p className="text-sm text-gray-500">Fashion Retail</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <span className="text-sm font-medium text-gray-500">Challenge:</span>
+                            <p className="text-gray-700">High customer acquisition costs and declining ROAS on social media platforms.</p>
+                        </div>
+                        <div class="mb-4">
+                            <span className="text-sm font-medium text-gray-500">Solution:</span>
+                            <p className="text-gray-700">Implemented Campaign Optimizer AI and Audience Intelligence to refine targeting and optimize bids.</p>
+                        </div>
+                        <div class="mb-4">
+                            <span className="text-sm font-medium text-gray-500">Results:</span>
+                            <ul className="text-gray-700 mt-2">
+                                <li className="flex items-center">
+                                    <i class="fas fa-arrow-up text-green-500 mr-2"></i>
+                                    <span>187% increase in ROAS</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <i class="fas fa-arrow-down text-green-500 mr-2"></i>
+                                    <span>42% reduction in CPA</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <i class="fas fa-arrow-up text-green-500 mr-2"></i>
+                                    <span>3.2x increase in conversion rate</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="showCaseStudyModal('E-commerce Brand')" class="text-blue-600 hover:text-blue-800 font-medium">
+                            Read Full Case Study →
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Case Study 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://via.placeholder.com/48" alt="SaaS Company" className="w-12 h-12 rounded-full mr-3">
+                            <div>
+                                <h3 className="text-lg font-bold">SaaS Company</h3>
+                                <p className="text-sm text-gray-500">B2B Software</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <span className="text-sm font-medium text-gray-500">Challenge:</span>
+                            <p className="text-gray-700">Struggling to reach decision-makers in target industries with limited ad budget.</p>
+                        </div>
+                        <div class="mb-4">
+                            <span className="text-sm font-medium text-gray-500">Solution:</span>
+                            <p className="text-gray-700">Deployed Budget Master AI and Cross-Platform Sync to optimize spend across LinkedIn and Google Ads.</p>
+                        </div>
+                        <div class="mb-4">
+                            <span className="text-sm font-medium text-gray-500">Results:</span>
+                            <ul className="text-gray-700 mt-2">
+                                <li className="flex items-center">
+                                    <i class="fas fa-arrow-up text-green-500 mr-2"></i>
+                                    <span>94% increase in qualified leads</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <i class="fas fa-arrow-down text-green-500 mr-2"></i>
+                                    <span>38% lower cost per lead</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <i class="fas fa-arrow-up text-green-500 mr-2"></i>
+                                    <span>67% shorter sales cycle</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="showCaseStudyModal('SaaS Company')" class="text-blue-600 hover:text-blue-800 font-medium">
+                            Read Full Case Study →
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Case Study 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://via.placeholder.com/48" alt="Healthcare Provider" className="w-12 h-12 rounded-full mr-3">
+                            <div>
+                                <h3 className="text-lg font-bold">Healthcare Provider</h3>
+                                <p className="text-sm text-gray-500">Medical Services</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <span className="text-sm font-medium text-gray-500">Challenge:</span>
+                            <p className="text-gray-700">Low patient acquisition and high competition in local markets.</p>
+                        </div>
+                        <div class="mb-4">
+                            <span className="text-sm font-medium text-gray-500">Solution:</span>
+                            <p className="text-gray-700">Used Creative Analytics and Audience Intelligence to develop targeted local campaigns.</p>
+                        </div>
+                        <div class="mb-4">
+                            <span className="text-sm font-medium text-gray-500">Results:</span>
+                            <ul className="text-gray-700 mt-2">
+                                <li className="flex items-center">
+                                    <i class="fas fa-arrow-up text-green-500 mr-2"></i>
+                                    <span>156% increase in patient appointments</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <i class="fas fa-arrow-down text-green-500 mr-2"></i>
+                                    <span>51% reduction in cost per acquisition</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <i class="fas fa-arrow-up text-green-500 mr-2"></i>
+                                    <span>73% improvement in ad relevance score</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="showCaseStudyModal('Healthcare Provider')" class="text-blue-600 hover:text-blue-800 font-medium">
+                            Read Full Case Study →
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Case Study 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://via.placeholder.com/48" alt="Real Estate Agency" className="w-12 h-12 rounded-full mr-3">
+                            <div>
+                                <h3 className="text-lg font-bold">Real Estate Agency</h3>
+                                <p className="text-sm text-gray-500">Property Sales</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <span className="text-sm font-medium text-gray-500">Challenge:</span>
+                            <p className="text-gray-700">High lead costs and difficulty standing out in competitive markets.</p>
+                        </div>
+                        <div class="mb-4">
+                            <span className="text-sm font-medium text-gray-500">Solution:</span>
+                            <p className="text-gray-700">Implemented Campaign Optimizer AI and Creative Analytics for property ads.</p>
+                        </div>
+                        <div class="mb-4">
+                            <span className="text-sm font-medium text-gray-500">Results:</span>
+                            <ul className="text-gray-700 mt-2">
+                                <li className="flex items-center">
+                                    <i class="fas fa-arrow-up text-green-500 mr-2"></i>
+                                    <span>203% increase in qualified leads</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <i class="fas fa-arrow-down text-green-500 mr-2"></i>
+                                    <span>47% reduction in cost per lead</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <i class="fas fa-arrow-up text-green-500 mr-2"></i>
+                                    <span>28% increase in property viewings</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="showCaseStudyModal('Real Estate Agency')" class="text-blue-600 hover:text-blue-800 font-medium">
+                            Read Full Case Study →
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonials Section -->
+            <div class="mt-16">
+                <h3 className="text-2xl font-bold mb-8 text-center">What Our Clients Say</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="testimonial-card">
+                        <div className="testimonial-content">
+                            "Operator HQ AI transformed our advertising strategy. We've seen a 3x improvement in ROAS within just 60 days. The AI optimization is unlike anything we've tried before."
+                        </div>
+                        <div className="testimonial-author">
+                            <img src="https://via.placeholder.com/48" alt="Sarah Johnson" className="testimonial-avatar" />
+                            <div>
+                                <div className="font-bold">Sarah Johnson</div>
+                                <div className="text-sm text-gray-500">CMO, TechStart Inc.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div className="testimonial-content">
+                            "The audience intelligence capabilities are incredible. We're reaching customers we never could before, and our conversion rates have skyrocketed."
+                        </div>
+                        <div className="testimonial-author">
+                            <img src="https://via.placeholder.com/48" alt="Michael Chen" className="testimonial-avatar" />
+                            <div>
+                                <div className="font-bold">Michael Chen</div>
+                                <div className="text-sm text-gray-500">Marketing Director, FashionForward</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div className="testimonial-content">
+                            "Budget Master AI has saved us thousands while improving performance. The automated optimization works 24/7 and delivers consistent results."
+                        </div>
+                        <div className="testimonial-author">
+                            <img src="https://via.placeholder.com/48" alt="Emily Rodriguez" className="testimonial-avatar" />
+                            <div>
+                                <div className="font-bold">Emily Rodriguez</div>
+                                <div className="text-sm text-gray-500">Founder, HealthPlus</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Tab -->
+        <div id="pricing" class="tab-content">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Simple, Transparent Pricing</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="pricing-card bg-white rounded-xl shadow-lg p-8 hover-lift">
+                    <h3 className="text-2xl font-bold mb-4">Starter</h3>
+                    <div className="text-4xl font-bold mb-6">$999<span className="text-lg font-normal text-gray-600">/month</span></div>
+                    <p className="text-gray-600 mb-6">Perfect for small businesses getting started with AI advertising</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Up to $5K/month ad spend</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Campaign Optimizer AI</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Basic analytics dashboard</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Email support</span>
+                        </li>
+                    </ul>
+                    <button onclick="showPricingModal('Starter')" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                        Get Started
+                    </button>
+                </div>
+                
+                <!-- Professional Plan -->
+                <div class="pricing-card featured bg-white rounded-xl shadow-lg p-8 hover-lift relative">
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                        MOST POPULAR
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4">Professional</h3>
+                    <div className="text-4xl font-bold mb-6">$2,499<span className="text-lg font-normal text-gray-600">/month</span></div>
+                    <p className="text-gray-600 mb-6">Ideal for growing businesses with established advertising budgets</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Up to $25K/month ad spend</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>All AI products included</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Advanced analytics & reporting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Priority support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Monthly strategy sessions</span>
+                        </li>
+                    </ul>
+                    <button onclick="showPricingModal('Professional')" class="w-full accent-gradient text-white py-3 rounded-lg hover:opacity-90 transition duration-300">
+                        Get Started
+                    </button>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="pricing-card bg-white rounded-xl shadow-lg p-8 hover-lift">
+                    <h3 className="text-2xl font-bold mb-4">Enterprise</h3>
+                    <div className="text-4xl font-bold mb-6">Custom</div>
+                    <p className="text-gray-600 mb-6">For large organizations with complex advertising needs</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Unlimited ad spend</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>All AI products + custom features</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>White-label options</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Dedicated account team</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Custom integrations</span>
+                        </li>
+                    </ul>
+                    <button onclick="showPricingModal('Enterprise')" class="w-full bg-gray-800 text-white py-3 rounded-lg hover:bg-gray-900 transition duration-300">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p className="text-gray-600">All plans include a 30-day ROI guarantee. No setup fees. Cancel anytime.</p>
+            </div>
+        </div>
+
+        <!-- Contact Tab -->
+        <div id="contact" class="tab-content">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Get in Touch</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div>
+                    <h3 className="text-2xl font-bold mb-6">Ready to Transform Your Advertising?</h3>
+                    <p className="text-gray-600 mb-8">
+                        Our team of AI experts and advertising specialists are ready to help you achieve unprecedented results. Schedule a demo to see how Operator HQ AI can revolutionize your advertising strategy.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div className="flex items-start">
+                            <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 className="font-bold mb-1">Headquarters</h4>
+                                <p className="text-gray-600">123 Innovation Drive, Tech City, TC 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div className="flex items-start">
+                            <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4 flex-shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 className="font-bold mb-1">Phone</h4>
+                                <p className="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div className="flex items-start">
+                            <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4 flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 className="font-bold mb-1">Email</h4>
+                                <p className="text-gray-600">info@operatorhq.ai</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div className="bg-white rounded-xl shadow-lg p-8">
+                        <h3 className="text-xl font-bold mb-6">Schedule a Demo</h3>
+                        <form onsubmit="handleContactForm(event)">
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                                    Full Name
+                                </label>
+                                <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="name" type="text" placeholder="Your name" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                                    Email
+                                </label>
+                                <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="email" type="email" placeholder="your@email.com" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="company">
+                                    Company
+                                </label>
+                                <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="company" type="text" placeholder="Your company" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="budget">
+                                    Monthly Ad Budget
+                                </label>
+                                <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="budget" required>
+                                    <option value="">Select budget range</option>
+                                    <option value="0-5000">$0 - $5,000</option>
+                                    <option value="5000-25000">$5,000 - $25,000</option>
+                                    <option value="25000-100000">$25,000 - $100,000</option>
+                                    <option value="100000+">$100,000+</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+                                    Tell us about your advertising goals
+                                </label>
+                                <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="message" rows="4" placeholder="What would you like to achieve?" required></textarea>
+                            </div>
+                            
+                            <button class="w-full accent-gradient text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition duration-300" type="submit">
+                                Schedule Demo
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="py-16 accent-gradient text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Revolutionize Your Advertising?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Join hundreds of businesses already transforming their advertising results with Operator HQ AI</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button onclick="showDemoModal()" class="bg-white text-blue-700 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition duration-300">
+                    Book a Demo
+                </button>
+                <button onclick="showTab('pricing')" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-white hover:text-blue-700 transition duration-300">
+                    View Pricing
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Operator HQ AI</h3>
+                    <p class="text-gray-400">Revolutionizing advertising with artificial intelligence.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Campaign Optimizer AI</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Audience Intelligence</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Creative Analytics</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Budget Master AI</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Partners</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Case Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Whitepapers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Operator HQ AI x Adspend Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Background -->
+    <div id="modalBackground" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" onclick="closeModals()"></div>
+
+    <!-- Demo Modal -->
+    <div id="demoModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full mx-4" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Schedule a Demo</h2>
+                <button onclick="closeModals()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form onsubmit="handleDemoForm(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="demoName">
+                        Full Name
+                    </label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="demoName" type="text" placeholder="Your name" required>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="demoEmail">
+                        Email
+                    </label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="demoEmail" type="email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="demoCompany">
+                        Company
+                    </label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="demoCompany" type="text" placeholder="Your company" required>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="demoDate">
+                        Preferred Date
+                    </label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="demoDate" type="date" required>
+                </div>
+                
+                <button class="w-full accent-gradient text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition duration-300" type="submit">
+                    Schedule Demo
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full mx-4" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Client Login</h2>
+                <button onclick="closeModals()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form onsubmit="handleLoginForm(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="loginEmail">
+                        Email
+                    </label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="loginEmail" type="email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="loginPassword">
+                        Password
+                    </label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="loginPassword" type="password" placeholder="••••••••" required>
+                </div>
+                
+                <button class="w-full accent-gradient text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition duration-300" type="submit">
+                    Log In
+                </button>
+                
+                <p class="text-center text-gray-600 text-sm mt-4">
+                    <a href="#" class="text-blue-600 hover:text-blue-800">Forgot password?</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl shadow-2xl p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="productModalTitle" class="text-2xl font-bold">Product Details</h2>
+                <button onclick="closeModals()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <div id="productModalContent">
+                <!-- Content will be dynamically inserted -->
+            </div>
+            
+            <div class="mt-8 flex justify-end">
+                <button onclick="closeModals()" class="bg-gray-200 text-gray-800 px-6 py-2 rounded-lg hover:bg-gray-300 transition duration-300 mr-3">
+                    Close
+                </button>
+                <button onclick="showDemoModal()" class="accent-gradient text-white px-6 py-2 rounded-lg hover:opacity-90 transition duration-300">
+                    Schedule Demo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Study Modal -->
+    <div id="caseStudyModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl shadow-2xl p-8 max-w-3xl w-full mx-4 max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="caseStudyModalTitle" class="text-2xl font-bold">Case Study</h2>
+                <button onclick="closeModals()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <div id="caseStudyModalContent">
+                <!-- Content will be dynamically inserted -->
+            </div>
+            
+            <div class="mt-8 flex justify-end">
+                <button onclick="closeModals()" class="bg-gray-200 text-gray-800 px-6 py-2 rounded-lg hover:bg-gray-300 transition duration-300 mr-3">
+                    Close
+                </button>
+                <button onclick="showDemoModal()" class="accent-gradient text-white px-6 py-2 rounded-lg hover:opacity-90 transition duration-300">
+                    Schedule Demo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Modal -->
+    <div id="pricingModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full mx-4" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="pricingModalTitle" class="text-2xl font-bold">Get Started</h2>
+                <button onclick="closeModals()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form onsubmit="handlePricingForm(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="pricingName">
+                        Full Name
+                    </label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="pricingName" type="text" placeholder="Your name" required>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="pricingEmail">
+                        Email
+                    </label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="pricingEmail" type="email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="pricingCompany">
+                        Company
+                    </label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="pricingCompany" type="text" placeholder="Your company" required>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="pricingPlan">
+                        Selected Plan
+                    </label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-100" id="pricingPlan" type="text" readonly>
+                </div>
+                
+                <button class="w-full accent-gradient text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition duration-300" type="submit">
+                    Get Started
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 hidden">
+        <div class="flex items-center">
+            <i class="fas fa-check-circle mr-2"></i>
+            <span id="successText">Success!</span>
+        </div>
+    </div>
+
+    <script>
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tab buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab button
+            event.target.classList.add('active');
+            
+            // Smooth scroll to tab section
+            document.getElementById(tabName).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Modal functionality
+        function showDemoModal() {
+            document.getElementById('demoModal').classList.remove('hidden');
+            document.getElementById('modalBackground').classList.remove('hidden');
+        }
+
+        function showLoginModal() {
+            document.getElementById('loginModal').classList.remove('hidden');
+            document.getElementById('modalBackground').classList.remove('hidden');
+        }
+
+        function showProductModal(productName) {
+            document.getElementById('productModalTitle').textContent = productName + ' Details';
+            
+            // Set content based on product
+            let content = '';
+            if (productName === 'Campaign Optimizer AI') {
+                content = `
+                    <div class="mb-6">
+                        <img src="https://via.placeholder.com/600x300" alt="Campaign Optimizer AI" className="w-full rounded-lg mb-4">
+                        <h3 className="text-xl font-bold mb-2">Revolutionize Your Campaign Performance</h3>
+                        <p class="text-gray-600 mb-4">Campaign Optimizer AI uses advanced machine learning algorithms to continuously optimize your advertising campaigns in real-time, ensuring maximum performance and ROI.</p>
+                        
+                        <h4 className="font-bold mb-2">Key Features:</h4>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Real-time bid optimization</li>
+                            <li>Automatic budget allocation</li>
+                            <li>Performance prediction algorithms</li>
+                            <li>Cross-platform optimization</li>
+                            <li>A/B testing automation</li>
+                        </ul>
+                        
+                        <h4 className="font-bold mb-2">Benefits:</h4>
+                        <ul class="list-disc pl-5">
+                            <li>Increase ROAS by up to 300%</li>
+                            <li>Reduce manual optimization time by 90%</li>
+                            <li>24/7 campaign monitoring and adjustment</li>
+                        </ul>
+                    </div>
+                `;
+            } else if (productName === 'Audience Intelligence') {
+                content = `
+                    <div class="mb-6">
+                        <img src="https://via.placeholder.com/600x300" alt="Audience Intelligence" className="w-full rounded-lg mb-4">
+                        <h3 className="text-xl font-bold mb-2">Discover Your Perfect Audience</h3>
+                        <p class="text-gray-600 mb-4">Audience Intelligence leverages AI to analyze customer behavior patterns and identify high-value audience segments with precision targeting capabilities.</p>
+                        
+                        <h4 className="font-bold mb-2">Key Features:</h4>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Behavioral analysis and segmentation</li>
+                            <li>Lookalike audience generation</li>
+                            <li>Customer journey mapping</li>
+                            <li>Predictive audience targeting</li>
+                            <li>Real-time audience insights</li>
+                        </ul>
+                        
+                        <h4 className="font-bold mb-2">Benefits:</h4>
+                        <ul class="list-disc pl-5">
+                            <li>Reach 95% more qualified prospects</li>
+                            <li>Reduce customer acquisition costs by 60%</li>
+                            <li>Increase conversion rates by 200%</li>
+                        </ul>
+                    </div>
+                `;
+            } else {
+                content = `<p class="text-gray-600">Product details for ${productName} will be available soon.</p>`;
+            }
+            
+            document.getElementById('productModalContent').innerHTML = content;
+            document.getElementById('productModal').classList.remove('hidden');
+            document.getElementById('modalBackground').classList.remove('hidden');
+        }
+
+        function showCaseStudyModal(companyName) {
+            document.getElementById('caseStudyModalTitle').textContent = companyName + ' Case Study';
+            
+            // Set content based on company
+            let content = '';
+            if (companyName === 'E-commerce Brand') {
+                content = `
+                    <div class="mb-6">
+                        <img src="https://via.placeholder.com/800x400" alt="E-commerce Brand Case Study" className="w-full rounded-lg mb-4">
+                        <h3 className="text-xl font-bold mb-2">Challenge</h3>
+                        <p class="text-gray-600 mb-4">A fast-growing e-commerce fashion brand was struggling with high customer acquisition costs and declining return on ad spend across social media platforms. Their manual optimization efforts were time-consuming and ineffective.</p>
+                        
+                        <h3 className="text-xl font-bold mb-2">Solution</h3>
+                        <p class="text-gray-600 mb-4">We implemented Campaign Optimizer AI and Audience Intelligence to automate their campaign management and refine their targeting strategy. The AI continuously analyzed performance data and adjusted bids, budgets, and targeting parameters in real-time.</p>
+                        
+                        <h3 className="text-xl font-bold mb-2">Implementation</h3>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Integrated with Facebook, Instagram, and Google Ads platforms</li>
+                            <li>Set up AI-powered audience segmentation</li>
+                            <li>Implemented real-time bid optimization</li>
+                            <li>Created automated budget allocation rules</li>
+                            <li>Established performance monitoring and alerts</li>
+                        </ul>
+                        
+                        <h3 className="text-xl font-bold mb-2">Results</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                            <div class="bg-blue-50 p-4 rounded-lg text-center">
+                                <div class="text-3xl font-bold text-blue-600">187%</div>
+                                <div class="text-sm text-gray-600">Increase in ROAS</div>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg text-center">
+                                <div class="text-3xl font-bold text-blue-600">42%</div>
+                                <div class="text-sm text-gray-600">Reduction in CPA</div>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg text-center">
+                                <div class="text-3xl font-bold text-blue-600">3.2x</div>
+                                <div class="text-sm text-gray-600">Increase in Conversion Rate</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">The brand achieved record-breaking performance while reducing manual optimization time by over 90%, allowing their marketing team to focus on strategy and creative development.</p>
+                    </div>
+                `;
+            } else {
+                content = `<p class="text-gray-600">Case study details for ${companyName} will be available soon.</p>`;
+            }
+            
+            document.getElementById('caseStudyModalContent').innerHTML = content;
+            document.getElementById('caseStudyModal').classList.remove('hidden');
+            document.getElementById('modalBackground').classList.remove('hidden');
+        }
+
+        function showPricingModal(planName) {
+            document.getElementById('pricingModalTitle').textContent = 'Get Started with ' + planName;
+            document.getElementById('pricingPlan').value = planName;
+            document.getElementById('pricingModal').classList.remove('hidden');
+            document.getElementById('modalBackground').classList.remove('hidden');
+        }
+
+        function closeModals() {
+            document.getElementById('demoModal').classList.add('hidden');
+            document.getElementById('loginModal').classList.add('hidden');
+            document.getElementById('productModal').classList.add('hidden');
+            document.getElementById('caseStudyModal').classList.add('hidden');
+            document.getElementById('pricingModal').classList.add('hidden');
+            document.getElementById('modalBackground').classList.add('hidden');
+        }
+
+        // Form handlers
+        function handleDemoForm(event) {
+            event.preventDefault();
+            showSuccess('Demo scheduled successfully! We\'ll contact you soon.');
+            closeModals();
+        }
+
+        function handleLoginForm(event) {
+            event.preventDefault();
+            showSuccess('Logged in successfully!');
+            closeModals();
+        }
+
+        function handleContactForm(event) {
+            event.preventDefault();
+            showSuccess('Message sent! We\'ll get back to you soon.');
+        }
+
+        function handlePricingForm(event) {
+            event.preventDefault();
+            showSuccess('Welcome aboard! We\'ll contact you to complete setup.');
+            closeModals();
+        }
+
+        // Success message
+        function showSuccess(message) {
+            const successDiv = document.getElementById('successMessage');
+            document.getElementById('successText').textContent = message;
+            successDiv.classList.remove('hidden');
+            
+            setTimeout(() => {
+                successDiv.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Initialize first tab as active
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.tab-button').classList.add('active');
+        });
+    </script>
+</body>
+</html>
