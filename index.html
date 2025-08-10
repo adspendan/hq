@@ -1,14 +1,19 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AdSpend + OperatorHQ — Your Own Marketing Agency, Installed Locally</title>
+  <title>AdSpend + OperatorHQ — Your Agency, Installed Locally</title>
   <meta name="description" content="Owner-controlled local AI + elite ad operations. One package. One team. Measurable growth. Book a strategy call or get your custom growth plan." />
   <link rel="icon" href="/favicon.ico" />
   <link rel="canonical" href="https://example.com/" />
 
+
   <!-- Open Graph / Twitter -->
+
+
   <meta property="og:type" content="website" />
   <meta property="og:title" content="AdSpend + OperatorHQ — Your Agency, Installed Locally" />
   <meta property="og:description" content="Owner-controlled local AI + elite ad operations. One package. One team." />
@@ -18,7 +23,10 @@
   <meta name="twitter:description" content="Owner-controlled local AI + elite ad operations. One package. One team." />
   <meta name="twitter:image" content="/og-image.jpg" />
 
+
   <!-- Schema.org JSON-LD -->
+
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,8 +43,13 @@
   }
   </script>
 
+
   <!-- Tailwind (CDN) -->
+
+
   <script src="https://cdn.tailwindcss.com"></script>
+
+
   <script>
     tailwind.config = {
       theme: {
@@ -53,29 +66,35 @@
               950: '#020617'
             }
           },
-          boxShadow: {
-            glow: '0 10px 30px rgba(193,255,114,0.12)'
-          },
-          borderRadius: {
-            '2xl': '1rem'
-          }
+          boxShadow: { glow: '0 10px 30px rgba(193,255,114,0.12)' },
+          borderRadius: { '2xl': '1rem' }
         }
       }
     }
   </script>
+
+
   <style>
+    html { scroll-behavior: smooth; }
     /* Reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; transition: none !important; }
-    }
-    /* Focus ring helper when Tailwind outline-none used */
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+    /* Focus ring helper */
     .focus-visible:focus-visible { outline: 2px solid #C1FF72; outline-offset: 2px; }
+    /* Active section link */
+    .nav-active { color: #C1FF72 !important; border-bottom: 2px solid #C1FF72; }
+    /* Stepper */
+    .step-dot { width: 24px; height: 24px; border-radius: 9999px; display:inline-flex; align-items:center; justify-content:center; }
   </style>
+
+
 </head>
 <body class="bg-base-950 text-base-50 antialiased selection:bg-accent selection:text-black">
   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-accent text-black px-3 py-2 rounded">Skip to content</a>
 
+
   <!-- Announcement Bar -->
+
+
   <div id="announce" class="bg-accent text-black text-sm py-2">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
       <p class="font-medium">What’s new: Operator v2.1 released — now with Local LLM Mode.</p>
@@ -83,25 +102,28 @@
     </div>
   </div>
 
+
   <!-- Header / Nav -->
+
+
   <header class="sticky top-0 z-40 backdrop-blur bg-base-950/85 border-b border-base-900">
     <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between" aria-label="Main">
-      <a href="#" class="flex items-center gap-3" aria-label="AdSpend + OperatorHQ home">
+      <a href="#hero" class="flex items-center gap-3" aria-label="AdSpend + OperatorHQ home">
         <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent text-black font-extrabold">A</span>
         <span class="font-bold text-lg">AdSpend</span>
         <span class="text-base-700">|</span>
         <span class="font-bold text-accent">OperatorHQ</span>
       </a>
       <div class="hidden md:flex items-center gap-6 text-base-200">
-        <a href="#why" class="hover:text-accent">Why Synergy</a>
-        <a href="#what" class="hover:text-accent">What You Get</a>
-        <a href="#how" class="hover:text-accent">How It Works</a>
-        <a href="#automations" class="hover:text-accent">Automations</a>
-        <a href="#pricing" class="hover:text-accent">Pricing</a>
-        <a href="#faq" class="hover:text-accent">FAQ</a>
+        <a href="#why" class="hover:text-accent nav-link">Why Synergy</a>
+        <a href="#what" class="hover:text-accent nav-link">What You Get</a>
+        <a href="#how" class="hover:text-accent nav-link">How It Works</a>
+        <a href="#automations" class="hover:text-accent nav-link">Automations</a>
+        <a href="#pricing" class="hover:text-accent nav-link">Pricing</a>
+        <a href="#faq" class="hover:text-accent nav-link">FAQ</a>
       </div>
       <div class="hidden md:flex items-center gap-3">
-        <button class="text-base-200 hover:text-accent" onclick="openCalendly(event)" data-location="nav">Book Strategy Call</button>
+        <button class="text-base-200 hover:text-accent" onclick="openBooking(event)" data-location="nav">Book Strategy Call</button>
         <button class="bg-accent text-black font-medium px-4 py-2 rounded-2xl hover:shadow-glow" onclick="openGrowthPlan()">Get My Growth Plan</button>
       </div>
       <button class="md:hidden p-2" aria-label="Open menu" onclick="toggleMenu()">☰</button>
@@ -114,512 +136,526 @@
         <a href="#automations" onclick="toggleMenu()" class="hover:text-accent">Automations</a>
         <a href="#pricing" onclick="toggleMenu()" class="hover:text-accent">Pricing</a>
         <a href="#faq" onclick="toggleMenu()" class="hover:text-accent">FAQ</a>
-        <button class="mt-2 text-left text-accent" onclick="openCalendly(event)" data-location="nav-mobile">Book Strategy Call</button>
+        <button class="mt-2 text-left text-accent" onclick="openBooking(event)" data-location="nav-mobile">Book Strategy Call</button>
         <button class="bg-accent text-black font-medium px-4 py-2 rounded-2xl" onclick="openGrowthPlan()">Get My Growth Plan</button>
       </div>
     </div>
   </header>
 
-  <main id="main" class="">
+
+  <main id="main">
     <!-- HERO -->
     <section id="hero" class="py-20 md:py-28">
       <div class="max-w-5xl mx-auto px-4 text-center">
         <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Your Agency, Installed <span class="text-accent">Locally</span>.</h1>
         <p class="mt-6 text-xl text-base-200">Owner‑controlled AI + elite ad ops. We wire your stack, install your Operator, and compound returns with proprietary automations.</p>
         <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button class="bg-accent text-black font-bold text-lg px-8 py-4 rounded-2xl hover:shadow-glow" onclick="openCalendly(event)" data-location="hero">Book My Strategy Call</button>
+          <button class="bg-accent text-black font-bold text-lg px-8 py-4 rounded-2xl hover:shadow-glow" onclick="openBooking(event)" data-location="hero">Book My Strategy Call</button>
           <button class="border border-accent text-accent font-bold text-lg px-8 py-4 rounded-2xl hover:bg-accent hover:text-black" onclick="openGrowthPlan()">Generate My Custom Growth Plan</button>
         </div>
         <p class="mt-3 text-sm text-base-700">No pressure — see the blueprint first.</p>
 
-        <!-- Credibility strip -->
-        <div class="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-base-200">
-          <span class="inline-flex items-center gap-2">{<!-- shield icon -->}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-accent"><path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" stroke="currentColor" stroke-width="1.5"/></svg> Data stays with you</span>
-          <span class="inline-flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-accent"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.5"/></svg> Local model mode</span>
-          <span class="inline-flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-accent"><path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="1.5"/><path d="M4 9h16" stroke="currentColor" stroke-width="1.5"/></svg> Owner‑controlled access</span>
-        </div>
 
-        <!-- Dashboard peek card -->
-        <div class="mt-12 inline-block">
-          <button class="rounded-2xl bg-base-900 border border-base-800 p-4 hover:border-accent" onclick="openDashboard()" aria-haspopup="dialog" aria-controls="dashModal">
-            <div class="w-[320px]">
-              <!-- Inline SVG placeholder so it renders without assets -->
-              <svg viewBox="0 0 320 200" width="320" height="200" class="rounded-lg">
-                <defs>
-                  <linearGradient id="g" x1="0" x2="1">
-                    <stop offset="0%" stop-color="#1f2937"/>
-                    <stop offset="100%" stop-color="#0f172a"/>
-                  </linearGradient>
-                </defs>
-                <rect x="0" y="0" width="320" height="200" fill="url(#g)"/>
-                <rect x="16" y="16" width="288" height="24" rx="6" fill="#111827" stroke="#334155"/>
-                <rect x="16" y="56" width="140" height="120" rx="8" fill="#0b1220" stroke="#334155"/>
-                <rect x="164" y="56" width="140" height="56" rx="8" fill="#0b1220" stroke="#334155"/>
-                <rect x="164" y="120" width="140" height="56" rx="8" fill="#0b1220" stroke="#334155"/>
-                <!-- tiny bars -->
-                <g transform="translate(28,72)" stroke="#C1FF72"><path d="M0 40V10M12 40V22M24 40V5M36 40V28M48 40V16M60 40V30" stroke-width="2"/></g>
-              </svg>
-              <p class="mt-2 text-accent text-sm text-center">View Dashboard Preview</p>
-            </div>
-          </button>
+    <!-- Credibility strip -->
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-base-200">
+      <span class="inline-flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-accent"><path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" stroke="currentColor" stroke-width="1.5"/></svg> Data stays with you</span>
+      <span class="inline-flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-accent"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.5"/></svg> Local model mode</span>
+      <span class="inline-flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-accent"><path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="1.5"/><path d="M4 9h16" stroke="currentColor" stroke-width="1.5"/></svg> Owner‑controlled access</span>
+    </div>
+
+    <!-- Dashboard peek card -->
+    <div class="mt-12 inline-block">
+      <button class="rounded-2xl bg-base-900 border border-base-800 p-4 hover:border-accent" onclick="openDashboard()" aria-haspopup="dialog" aria-controls="dashModal">
+        <div class="w-[320px]">
+          <!-- Inline SVG placeholder so it renders without assets -->
+          <svg viewBox="0 0 320 200" width="320" height="200" class="rounded-lg">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0%" stop-color="#1f2937"/>
+                <stop offset="100%" stop-color="#0f172a"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="320" height="200" fill="url(#g)"/>
+            <rect x="16" y="16" width="288" height="24" rx="6" fill="#111827" stroke="#334155"/>
+            <rect x="16" y="56" width="140" height="120" rx="8" fill="#0b1220" stroke="#334155"/>
+            <rect x="164" y="56" width="140" height="56" rx="8" fill="#0b1220" stroke="#334155"/>
+            <rect x="164" y="120" width="140" height="56" rx="8" fill="#0b1220" stroke="#334155"/>
+            <g transform="translate(28,72)" stroke="#C1FF72"><path d="M0 40V10M12 40V22M24 40V5M36 40V28M48 40V16M60 40V30" stroke-width="2"/></g>
+          </svg>
+          <p class="mt-2 text-accent text-sm text-center">View Dashboard Preview</p>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SYNERGY -->
+<section id="why" class="py-16 border-t border-base-900">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center">Agency + Operator = Compound ROI</h2>
+    <p class="mt-4 text-center text-base-200">Media, creative, and sales ops on a local AI spine → cheaper tests, faster iterations, harder‑working dollars.</p>
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl bg-base-900 p-6 shadow-glow">
+        <h3 class="font-bold mb-2">Agency</h3>
+        <ul class="text-sm text-base-200 list-disc ml-5 space-y-1">
+          <li>Strategy & offers</li>
+          <li>Creative & production</li>
+          <li>Media buying & CRO</li>
+        </ul>
+      </div>
+      <div class="flex items-center justify-center text-4xl text-accent">+</div>
+      <div class="rounded-2xl bg-base-900 p-6 shadow-glow">
+        <h3 class="font-bold mb-2">Operator</h3>
+        <ul class="text-sm text-base-200 list-disc ml-5 space-y-1">
+          <li>Automations (HQs)</li>
+          <li>Insights & daily briefs</li>
+          <li>Owner‑controlled data</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 rounded-2xl bg-base-900 p-8 text-center">
+      <div class="text-base-200 text-sm mb-2">Illustrative outcomes (replace with client‑verified numbers)</div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div><div class="text-3xl font-bold text-accent">22–38%</div><div class="text-base-200 text-sm">Lower CAC</div></div>
+        <div><div class="text-3xl font-bold text-accent">3.2×</div><div class="text-base-200 text-sm">Higher LTV</div></div>
+        <div><div class="text-3xl font-bold text-accent">67%</div><div class="text-base-200 text-sm">Faster cycle time</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section id="what" class="py-16 border-t border-base-900">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">What You Get</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Cards with badges -->
+      <div class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
+        <div class="text-sm mb-2"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
+        <h3 class="font-bold mb-2">Ad Ops HQ</h3>
+        <ul class="text-sm text-base-200 space-y-1">
+          <li>Budget Orchestrator (CAPI‑aware)</li>
+          <li>Channel Mix Optimizer</li>
+          <li>Smart Pacing</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
+        <div class="text-sm mb-2"><span class="px-2 py-1 bg-base-800 rounded">Beta</span></div>
+        <h3 class="font-bold mb-2">Creative Studio HQ</h3>
+        <ul class="text-sm text-base-200 space-y-1">
+          <li>Script & Storyboard Generator</li>
+          <li>Batch Content Planner</li>
+          <li>Auto‑Cut & Caption</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
+        <div class="text-sm mb-2"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
+        <h3 class="font-bold mb-2">Sales Assist HQ</h3>
+        <ul class="text-sm text-base-200 space-y-1">
+          <li>AI SDR sequences & voicemail drops</li>
+          <li>Inbox triage & calendar fill</li>
+          <li>Proposal composer & objection handler</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
+        <div class="text-sm mb-2"><span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
+        <h3 class="font-bold mb-2">AI Reception & CS HQ</h3>
+        <ul class="text-sm text-base-200 space-y-1">
+          <li>Voice/chat receptionist with CRM notes</li>
+          <li>Ticket deflection & satisfaction loops</li>
+          <li>Auto knowledge base generation</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
+        <div class="text-sm mb-2"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
+        <h3 class="font-bold mb-2">Insights & Finance Pulse</h3>
+        <ul class="text-sm text-base-200 space-y-1">
+          <li>Daily Operator Briefing</li>
+          <li>KPI anomalies & cohort/LTV snapshots</li>
+          <li>Cost‑per‑Outcome with risk flags</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
+        <div class="text-sm mb-2"><span class="px-2 py-1 bg-base-800 rounded">Owner‑Controlled</span></div>
+        <h3 class="font-bold mb-2">Data Spine & Operator OS</h3>
+        <ul class="text-sm text-base-200 space-y-1">
+          <li>On‑device ETL & schema layer</li>
+          <li>Consent logs & audit trails</li>
+          <li>Local model routing & offline caching</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="py-16 border-t border-base-900">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">How It Works</h2>
+    <ol class="relative space-y-8">
+      <li class="relative pl-10">
+        <span class="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-accent"></span>
+        <div class="rounded-2xl bg-base-900 p-6">
+          <h3 class="font-bold">Discovery (Week 1)</h3>
+          <p class="text-base-200 text-sm mt-1">Deep dive on goals, stack, workflows. We map automation opportunities.</p>
+        </div>
+      </li>
+      <li class="relative pl-10">
+        <span class="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-accent"></span>
+        <div class="rounded-2xl bg-base-900 p-6">
+          <h3 class="font-bold">Data & Access (Week 2)</h3>
+          <p class="text-base-200 text-sm mt-1">Secure connectors & pipelines. Environment ready for Operator install.</p>
+        </div>
+      </li>
+      <li class="relative pl-10">
+        <span class="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-accent"></span>
+        <div class="rounded-2xl bg-base-900 p-6">
+          <h3 class="font-bold">Install & Train (Weeks 3–4)</h3>
+          <p class="text-base-200 text-sm mt-1">Install Operator, enable HQ modules, tune on your data & guardrails.</p>
+        </div>
+      </li>
+      <li class="relative pl-10">
+        <span class="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-accent"></span>
+        <div class="rounded-2xl bg-base-900 p-6">
+          <h3 class="font-bold">30‑Day Sprint (Month 2)</h3>
+          <p class="text-base-200 text-sm mt-1">Ship the highest‑leverage automations. Daily briefs. Measurable outcomes.</p>
+        </div>
+      </li>
+    </ol>
+    <div class="mt-8 rounded-2xl bg-base-900 p-6">
+      <h3 class="font-bold mb-3">Support & SLA Snapshot</h3>
+      <div class="grid sm:grid-cols-2 gap-3 text-sm text-base-200">
+        <div>Emergency response: 2 hours</div>
+        <div>Quarterly reviews</div>
+        <div>Bug fixes included</div>
+        <div>Up to 5 module integrations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTOMATIONS CATALOG (Marketplace model) -->
+<section id="automations" class="py-16 border-t border-base-900">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Automations Catalog</h2>
+    <p class="text-center text-base-200 max-w-3xl mx-auto">Browse HQs in the marketplace, purchase à la carte, then click‑to‑install. The onboarding wizard collects credentials, roles, and guardrails — and your automation initializes.</p>
+    <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Each card is clickable and opens the Module modal with a 3‑step wizard -->
+      <article class="module-card rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition cursor-pointer" 
+               data-name="AI Budget Orchestrator" 
+               data-desc="CAPI‑aware allocation across channels with real‑time pacing." 
+               data-trigger="Campaign thresholds" 
+               data-action="Reallocate budgets" 
+               data-success="+ROAS (illustrative)" 
+               data-price="$399/mo" data-setup="~20 minutes">
+        <div class="flex items-start justify-between mb-3">
+          <h3 class="font-bold">AI Budget Orchestrator</h3>
+          <div class="text-xs"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
+        </div>
+        <p class="text-sm text-base-200">CAPI‑aware allocation across channels with real‑time pacing.</p>
+        <button class="mt-4 text-accent text-sm underline" onclick="openModule(event)">View details →</button>
+      </article>
+
+      <article class="module-card rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition cursor-pointer" 
+               data-name="Creative Performance Radar" 
+               data-desc="Monitors creative fatigue across Meta, TikTok, Google, YouTube and suggests refresh windows." 
+               data-trigger="Performance drop" 
+               data-action="Flag for refresh" 
+               data-success="-CPA (illustrative)" 
+               data-price="$299/mo" data-setup="~10 minutes">
+        <div class="flex items-start justify-between mb-3">
+          <h3 class="font-bold">Creative Performance Radar</h3>
+          <div class="text-xs"><span class="px-2 py-1 bg-base-800 rounded">Beta</span></div>
+        </div>
+        <p class="text-sm text-base-200">Monitors creative fatigue and suggests refresh windows.</p>
+        <button class="mt-4 text-accent text-sm underline" onclick="openModule(event)">View details →</button>
+      </article>
+
+      <article class="module-card rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition cursor-pointer" 
+               data-name="AI SDR Sequences" 
+               data-desc="Personalized outreach, voicemail drops, and inbox triage." 
+               data-trigger="New lead" 
+               data-action="Start sequence" 
+               data-success="+meetings (illustrative)" 
+               data-price="$349/mo" data-setup="~15 minutes">
+        <div class="flex items-start justify-between mb-3">
+          <h3 class="font-bold">AI SDR Sequences</h3>
+          <div class="text-xs"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
+        </div>
+        <p class="text-sm text-base-200">Personalized outreach, voicemail drops, and inbox triage.</p>
+        <button class="mt-4 text-accent text-sm underline" onclick="openModule(event)">View details →</button>
+      </article>
+
+      <article class="module-card rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition cursor-pointer" 
+               data-name="Daily Operator Briefing" 
+               data-desc="Executive snapshot of KPIs, anomalies, and recommended actions." 
+               data-trigger="Daily" 
+               data-action="Generate report" 
+               data-success="100% coverage (illustrative)" 
+               data-price="$149/mo" data-setup="~5 minutes">
+        <div class="flex items-start justify-between mb-3">
+          <h3 class="font-bold">Daily Operator Briefing</h3>
+          <div class="text-xs"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
+        </div>
+        <p class="text-sm text-base-200">Executive snapshot of KPIs and actions.</p>
+        <button class="mt-4 text-accent text-sm underline" onclick="openModule(event)">View details →</button>
+      </article>
+
+      <article class="module-card rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition cursor-pointer" 
+               data-name="Cost‑per‑Outcome View" 
+               data-desc="Unified CPO across channels with stoplight risk flags." 
+               data-trigger="Data update" 
+               data-action="Recalculate" 
+               data-success="Real‑time visibility" 
+               data-price="$199/mo" data-setup="~8 minutes">
+        <div class="flex items-start justify-between mb-3">
+          <h3 class="font-bold">Cost‑per‑Outcome View</h3>
+          <div class="text-xs"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
+        </div>
+        <p class="text-sm text-base-200">Unified CPO across channels with stoplight risk flags.</p>
+        <button class="mt-4 text-accent text-sm underline" onclick="openModule(event)">View details →</button>
+      </article>
+
+      <article class="module-card rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition cursor-pointer" 
+               data-name="Dental Receptionist HQ" 
+               data-desc="Phone/chat intake, insurance verification, reminders, and no‑show saver for dental practices." 
+               data-trigger="Inbound call / site chat" 
+               data-action="Verify, schedule, sync to PMS/CRM" 
+               data-success="+show rate (illustrative)" 
+               data-price="$499/mo" data-setup="~25 minutes">
+        <div class="flex items-start justify-between mb-3">
+          <h3 class="font-bold">Dental Receptionist HQ</h3>
+          <div class="text-xs"><span class="px-2 py-1 bg-base-800 rounded">Marketplace</span></div>
+        </div>
+        <p class="text-sm text-base-200">Intake, verification, reminders, and no‑show saver.</p>
+        <button class="mt-4 text-accent text-sm underline" onclick="openModule(event)">View details →</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD PREVIEW MODAL -->
+<div id="dashModal" class="fixed inset-0 bg-black/80 hidden z-50" role="dialog" aria-modal="true" aria-labelledby="dashTitle">
+  <div class="min-h-screen w-full flex items-center justify-center p-4" onclick="if(event.target===this) closeDashboard()">
+    <div class="bg-base-950 border border-base-900 rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden">
+      <div class="flex items-center justify-between p-4 border-b border-base-900">
+        <h3 id="dashTitle" class="font-bold text-xl">Operator Dashboard Preview</h3>
+        <button aria-label="Close" class="text-base-200" onclick="closeDashboard()">✕</button>
+      </div>
+      <div class="border-b border-base-900">
+        <div class="flex">
+          <button class="dash-tab active px-5 py-3 text-accent border-b-2 border-accent" data-tab="adops" onclick="switchDash('adops', this)">Ad Ops</button>
+          <button class="dash-tab px-5 py-3 text-base-200 hover:text-accent" data-tab="creative" onclick="switchDash('creative', this)">Creative Studio</button>
+          <button class="dash-tab px-5 py-3 text-base-200 hover:text-accent" data-tab="sales" onclick="switchDash('sales', this)">Sales Assist</button>
+          <button class="dash-tab px-5 py-3 text-base-200 hover:text-accent" data-tab="reception" onclick="switchDash('reception', this)">AI Reception</button>
+          <button class="dash-tab px-5 py-3 text-base-200 hover:text-accent" data-tab="finance" onclick="switchDash('finance', this)">Finance Pulse</button>
         </div>
       </div>
-    </section>
-
-    <!-- WHY SYNERGY -->
-    <section id="why" class="py-16 border-t border-base-900">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center">Agency + Operator = Compound ROI</h2>
-        <p class="mt-4 text-center text-base-200">Media, creative, and sales ops on a local AI spine → cheaper tests, faster iterations, harder‑working dollars.</p>
-        <div class="mt-10 grid md:grid-cols-3 gap-6">
-          <div class="rounded-2xl bg-base-900 p-6 shadow-glow">
-            <h3 class="font-bold mb-2">Agency</h3>
-            <ul class="text-sm text-base-200 list-disc ml-5 space-y-1">
-              <li>Strategy & offers</li>
-              <li>Creative & production</li>
-              <li>Media buying & CRO</li>
-            </ul>
+      <div id="dashBody" class="p-6 overflow-y-auto max-h-[70vh]">
+        <div id="panel-adops" class="grid sm:grid-cols-3 gap-4">
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900">
+            <div class="text-accent text-2xl font-bold">$127k</div>
+            <div class="text-sm text-base-200">Total Ad Spend</div>
+            <svg viewBox="0 0 120 30" width="100%" height="30" class="mt-2"><polyline fill="none" stroke="#C1FF72" stroke-width="2" points="0,25 10,20 20,22 30,18 40,15 50,12 60,14 70,10 80,12 90,9 100,8 110,6 120,5"/></svg>
           </div>
-          <div class="flex items-center justify-center text-4xl text-accent">+</div>
-          <div class="rounded-2xl bg-base-900 p-6 shadow-glow">
-            <h3 class="font-bold mb-2">Operator</h3>
-            <ul class="text-sm text-base-200 list-disc ml-5 space-y-1">
-              <li>Automations (HQs)</li>
-              <li>Insights & daily briefs</li>
-              <li>Owner‑controlled data</li>
-            </ul>
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900">
+            <div class="text-accent text-2xl font-bold">4.2×</div>
+            <div class="text-sm text-base-200">ROAS</div>
+            <svg viewBox="0 0 120 30" width="100%" height="30" class="mt-2"><rect x="5" y="10" width="8" height="15" fill="#C1FF72"/><rect x="25" y="8" width="8" height="17" fill="#C1FF72"/><rect x="45" y="7" width="8" height="18" fill="#C1FF72"/><rect x="65" y="5" width="8" height="20" fill="#C1FF72"/><rect x="85" y="4" width="8" height="21" fill="#C1FF72"/><rect x="105" y="3" width="8" height="22" fill="#C1FF72"/></svg>
+          </div>
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900">
+            <div class="text-accent text-2xl font-bold">‑18%</div>
+            <div class="text-sm text-base-200">CPA Reduction</div>
+            <svg viewBox="0 0 120 30" width="100%" height="30" class="mt-2"><polyline fill="none" stroke="#C1FF72" stroke-width="2" points="0,5 20,7 40,10 60,13 80,17 100,22 120,25"/></svg>
           </div>
         </div>
-        <div class="mt-8 rounded-2xl bg-base-900 p-8 text-center">
-          <div class="text-base-200 text-sm mb-2">Illustrative outcomes (replace with client‑verified numbers)</div>
-          <div class="grid sm:grid-cols-3 gap-6">
-            <div><div class="text-3xl font-bold text-accent">22–38%</div><div class="text-base-200 text-sm">Lower CAC</div></div>
-            <div><div class="text-3xl font-bold text-accent">3.2×</div><div class="text-base-200 text-sm">Higher LTV</div></div>
-            <div><div class="text-3xl font-bold text-accent">67%</div><div class="text-base-200 text-sm">Faster cycle time</div></div>
-          </div>
+        <div id="panel-creative" class="hidden grid sm:grid-cols-3 gap-4">
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">24</div><div class="text-sm text-base-200">Active Campaigns</div></div>
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">89%</div><div class="text-sm text-base-200">Creative Score</div></div>
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">12</div><div class="text-sm text-base-200">Variants Testing</div></div>
         </div>
-      </div>
-    </section>
-
-    <!-- WHAT YOU GET -->
-    <section id="what" class="py-16 border-t border-base-900">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">What You Get</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Cards with badges -->
-          <div class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
-            <div class="text-sm mb-2"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
-            <h3 class="font-bold mb-2">Ad Ops HQ</h3>
-            <ul class="text-sm text-base-200 space-y-1">
-              <li>Budget Orchestrator (CAPI‑aware)</li>
-              <li>Channel Mix Optimizer</li>
-              <li>Smart Pacing</li>
-            </ul>
-          </div>
-          <div class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
-            <div class="text-sm mb-2"><span class="px-2 py-1 bg-base-800 rounded">Beta</span></div>
-            <h3 class="font-bold mb-2">Creative Studio HQ</h3>
-            <ul class="text-sm text-base-200 space-y-1">
-              <li>Script & Storyboard Generator</li>
-              <li>Batch Content Planner</li>
-              <li>Auto‑Cut & Caption</li>
-            </ul>
-          </div>
-          <div class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
-            <div class="text-sm mb-2"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
-            <h3 class="font-bold mb-2">Sales Assist HQ</h3>
-            <ul class="text-sm text-base-200 space-y-1">
-              <li>AI SDR sequences & voicemail drops</li>
-              <li>Inbox triage & calendar fill</li>
-              <li>Proposal composer & objection handler</li>
-            </ul>
-          </div>
-          <div class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
-            <div class="text-sm mb-2"><span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
-            <h3 class="font-bold mb-2">AI Reception & CS HQ</h3>
-            <ul class="text-sm text-base-200 space-y-1">
-              <li>Voice/chat receptionist with CRM notes</li>
-              <li>Ticket deflection & satisfaction loops</li>
-              <li>Auto knowledge base generation</li>
-            </ul>
-          </div>
-          <div class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
-            <div class="text-sm mb-2"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
-            <h3 class="font-bold mb-2">Insights & Finance Pulse</h3>
-            <ul class="text-sm text-base-200 space-y-1">
-              <li>Daily Operator Briefing</li>
-              <li>KPI anomalies & cohort/LTV snapshots</li>
-              <li>Cost‑per‑Outcome with risk flags</li>
-            </ul>
-          </div>
-          <div class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
-            <div class="text-sm mb-2"><span class="px-2 py-1 bg-base-800 rounded">Owner‑Controlled</span></div>
-            <h3 class="font-bold mb-2">Data Spine & Operator OS</h3>
-            <ul class="text-sm text-base-200 space-y-1">
-              <li>On‑device ETL & schema layer</li>
-              <li>Consent logs & audit trails</li>
-              <li>Local model routing & offline caching</li>
-            </ul>
-          </div>
+        <div id="panel-sales" class="hidden grid sm:grid-cols-3 gap-4">
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">156</div><div class="text-sm text-base-200">Active Sequences</div></div>
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">42%</div><div class="text-sm text-base-200">Response Rate</div></div>
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">28</div><div class="text-sm text-base-200">Meetings Booked</div></div>
         </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section id="how" class="py-16 border-t border-base-900">
-      <div class="max-w-5xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">How It Works</h2>
-        <ol class="relative space-y-8">
-          <li class="relative pl-10">
-            <span class="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-accent"></span>
-            <div class="rounded-2xl bg-base-900 p-6">
-              <h3 class="font-bold">Discovery (Week 1)</h3>
-              <p class="text-base-200 text-sm mt-1">Deep dive on goals, stack, workflows. We map automation opportunities.</p>
-            </div>
-          </li>
-          <li class="relative pl-10">
-            <span class="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-accent"></span>
-            <div class="rounded-2xl bg-base-900 p-6">
-              <h3 class="font-bold">Data & Access (Week 2)</h3>
-              <p class="text-base-200 text-sm mt-1">Secure connectors & pipelines. Environment ready for Operator install.</p>
-            </div>
-          </li>
-          <li class="relative pl-10">
-            <span class="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-accent"></span>
-            <div class="rounded-2xl bg-base-900 p-6">
-              <h3 class="font-bold">Install & Train (Weeks 3–4)</h3>
-              <p class="text-base-200 text-sm mt-1">Install Operator, enable HQ modules, tune on your data & guardrails.</p>
-            </div>
-          </li>
-          <li class="relative pl-10">
-            <span class="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-accent"></span>
-            <div class="rounded-2xl bg-base-900 p-6">
-              <h3 class="font-bold">30‑Day Sprint (Month 2)</h3>
-              <p class="text-base-200 text-sm mt-1">Ship the highest‑leverage automations. Daily briefs. Measurable outcomes.</p>
-            </div>
-          </li>
-        </ol>
-        <div class="mt-8 rounded-2xl bg-base-900 p-6">
-          <h3 class="font-bold mb-3">Support & SLA Snapshot</h3>
-          <div class="grid sm:grid-cols-2 gap-3 text-sm text-base-200">
-            <div>Emergency response: 2 hours</div>
-            <div>Quarterly reviews</div>
-            <div>Bug fixes included</div>
-            <div>Up to 5 module integrations</div>
-          </div>
+        <div id="panel-reception" class="hidden grid sm:grid-cols-3 gap-4">
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">98%</div><div class="text-sm text-base-200">Call Resolution</div></div>
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">342</div><div class="text-sm text-base-200">Tickets Deflected</div></div>
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">4.8/5</div><div class="text-sm text-base-200">Satisfaction</div></div>
         </div>
-      </div>
-    </section>
-
-    <!-- AUTOMATIONS CATALOG (Marketplace model) -->
-    <section id="automations" class="py-16 border-t border-base-900">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Automations Catalog</h2>
-        <p class="text-center text-base-200 max-w-3xl mx-auto">Browse HQs in the marketplace, purchase à la carte, then click‑to‑install. The onboarding wizard collects credentials, roles, and guardrails — and your automation initializes.</p>
-        <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Example tiles -->
-          <article class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
-            <div class="flex items-start justify-between mb-3">
-              <h3 class="font-bold">AI Budget Orchestrator</h3>
-              <div class="text-xs"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
-            </div>
-            <p class="text-sm text-base-200">CAPI‑aware allocation across channels with real‑time pacing.</p>
-            <dl class="mt-3 text-xs">
-              <div class="flex gap-2"><dt class="text-accent">Trigger:</dt><dd>Campaign thresholds</dd></div>
-              <div class="flex gap-2"><dt class="text-accent">Action:</dt><dd>Reallocate budgets</dd></div>
-              <div class="flex gap-2"><dt class="text-accent">Success:</dt><dd>+ROAS (illustrative)</dd></div>
-            </dl>
-          </article>
-          <article class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
-            <div class="flex items-start justify-between mb-3">
-              <h3 class="font-bold">Creative Performance Radar</h3>
-              <div class="text-xs"><span class="px-2 py-1 bg-base-800 rounded">Beta</span></div>
-            </div>
-            <p class="text-sm text-base-200">Monitors creative fatigue across Meta, TikTok, Google, YouTube and suggests refresh windows.</p>
-            <dl class="mt-3 text-xs">
-              <div class="flex gap-2"><dt class="text-accent">Trigger:</dt><dd>Performance drop</dd></div>
-              <div class="flex gap-2"><dt class="text-accent">Action:</dt><dd>Flag for refresh</dd></div>
-              <div class="flex gap-2"><dt class="text-accent">Success:</dt><dd>-CPA (illustrative)</dd></div>
-            </dl>
-          </article>
-          <article class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
-            <div class="flex items-start justify-between mb-3">
-              <h3 class="font-bold">AI SDR Sequences</h3>
-              <div class="text-xs"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
-            </div>
-            <p class="text-sm text-base-200">Personalized outreach, voicemail drops, and inbox triage.</p>
-            <dl class="mt-3 text-xs">
-              <div class="flex gap-2"><dt class="text-accent">Trigger:</dt><dd>New lead</dd></div>
-              <div class="flex gap-2"><dt class="text-accent">Action:</dt><dd>Start sequence</dd></div>
-              <div class="flex gap-2"><dt class="text-accent">Success:</dt><dd>+meetings (illustrative)</dd></div>
-            </dl>
-          </article>
-          <article class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
-            <div class="flex items-start justify-between mb-3">
-              <h3 class="font-bold">Daily Operator Briefing</h3>
-              <div class="text-xs"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
-            </div>
-            <p class="text-sm text-base-200">Executive snapshot of KPIs, anomalies, and recommended actions.</p>
-            <dl class="mt-3 text-xs">
-              <div class="flex gap-2"><dt class="text-accent">Trigger:</dt><dd>Daily</dd></div>
-              <div class="flex gap-2"><dt class="text-accent">Action:</dt><dd>Generate report</dd></div>
-              <div class="flex gap-2"><dt class="text-accent">Success:</dt><dd>100% coverage (illustrative)</dd></div>
-            </dl>
-          </article>
-          <article class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
-            <div class="flex items-start justify-between mb-3">
-              <h3 class="font-bold">Cost‑per‑Outcome View</h3>
-              <div class="text-xs"><span class="px-2 py-1 bg-base-800 rounded">Local</span> <span class="px-2 py-1 bg-base-800 rounded">GA</span></div>
-            </div>
-            <p class="text-sm text-base-200">Unified CPO across channels with stoplight risk flags.</p>
-            <dl class="mt-3 text-xs">
-              <div class="flex gap-2"><dt class="text-accent">Trigger:</dt><dd>Data update</dd></div>
-              <div class="flex gap-2"><dt class="text-accent">Action:</dt><dd>Recalculate</dd></div>
-              <div class="flex gap-2"><dt class="text-accent">Success:</dt><dd>Real‑time visibility</dd></div>
-            </dl>
-          </article>
-          <article class="rounded-2xl bg-base-900 p-6 border border-base-900 hover:border-accent transition">
-            <div class="flex items-start justify-between mb-3">
-              <h3 class="font-bold">Dental Receptionist HQ</h3>
-              <div class="text-xs"><span class="px-2 py-1 bg-base-800 rounded">Marketplace</span></div>
-            </div>
-            <p class="text-sm text-base-200">Phone/chat intake, insurance verification, reminder calls, no‑show saver.</p>
-            <dl class="mt-3 text-xs">
-              <div class="flex gap-2"><dt class="text-accent">Trigger:</dt><dd>Inbound call/site chat</dd></div>
-              <div class="flex gap-2"><dt class="text-accent">Action:</dt><dd>Verify, schedule, sync to PMS/CRM</dd></div>
-              <div class="flex gap-2"><dt class="text-accent">Success:</dt><dd>+show rate (illustrative)</dd></div>
-            </dl>
-          </article>
+        <div id="panel-finance" class="hidden grid sm:grid-cols-3 gap-4">
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">$2.4M</div><div class="text-sm text-base-200">Monthly Revenue</div></div>
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">$48</div><div class="text-sm text-base-200">CPO</div></div>
+          <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">3.1×</div><div class="text-sm text-base-200">LTV:CAC</div></div>
         </div>
-      </div>
-    </section>
-
-    <!-- DASHBOARD PREVIEW MODAL -->
-    <div id="dashModal" class="fixed inset-0 bg-black/80 hidden z-50" role="dialog" aria-modal="true" aria-labelledby="dashTitle">
-      <div class="min-h-screen w-full flex items-center justify-center p-4" onclick="if(event.target===this) closeDashboard()">
-        <div class="bg-base-950 border border-base-900 rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden">
-          <div class="flex items-center justify-between p-4 border-b border-base-900">
-            <h3 id="dashTitle" class="font-bold text-xl">Operator Dashboard Preview</h3>
-            <button aria-label="Close" class="text-base-200" onclick="closeDashboard()">✕</button>
-          </div>
-          <div class="border-b border-base-900">
-            <div class="flex">
-              <button class="dash-tab active px-5 py-3 text-accent border-b-2 border-accent" data-tab="adops" onclick="switchDash('adops', this)">Ad Ops</button>
-              <button class="dash-tab px-5 py-3 text-base-200 hover:text-accent" data-tab="creative" onclick="switchDash('creative', this)">Creative Studio</button>
-              <button class="dash-tab px-5 py-3 text-base-200 hover:text-accent" data-tab="sales" onclick="switchDash('sales', this)">Sales Assist</button>
-              <button class="dash-tab px-5 py-3 text-base-200 hover:text-accent" data-tab="reception" onclick="switchDash('reception', this)">AI Reception</button>
-              <button class="dash-tab px-5 py-3 text-base-200 hover:text-accent" data-tab="finance" onclick="switchDash('finance', this)">Finance Pulse</button>
-            </div>
-          </div>
-          <div id="dashBody" class="p-6 overflow-y-auto max-h-[70vh]">
-            <!-- Panels -->
-            <div id="panel-adops" class="grid sm:grid-cols-3 gap-4">
-              <!-- three stat tiles with tiny inline charts -->
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900">
-                <div class="text-accent text-2xl font-bold">$127k</div>
-                <div class="text-sm text-base-200">Total Ad Spend</div>
-                <svg viewBox="0 0 120 30" width="100%" height="30" class="mt-2"><polyline fill="none" stroke="#C1FF72" stroke-width="2" points="0,25 10,20 20,22 30,18 40,15 50,12 60,14 70,10 80,12 90,9 100,8 110,6 120,5"/></svg>
-              </div>
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900">
-                <div class="text-accent text-2xl font-bold">4.2×</div>
-                <div class="text-sm text-base-200">ROAS</div>
-                <svg viewBox="0 0 120 30" width="100%" height="30" class="mt-2"><rect x="5" y="10" width="8" height="15" fill="#C1FF72"/><rect x="25" y="8" width="8" height="17" fill="#C1FF72"/><rect x="45" y="7" width="8" height="18" fill="#C1FF72"/><rect x="65" y="5" width="8" height="20" fill="#C1FF72"/><rect x="85" y="4" width="8" height="21" fill="#C1FF72"/><rect x="105" y="3" width="8" height="22" fill="#C1FF72"/></svg>
-              </div>
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900">
-                <div class="text-accent text-2xl font-bold">‑18%</div>
-                <div class="text-sm text-base-200">CPA Reduction</div>
-                <svg viewBox="0 0 120 30" width="100%" height="30" class="mt-2"><polyline fill="none" stroke="#C1FF72" stroke-width="2" points="0,5 20,7 40,10 60,13 80,17 100,22 120,25"/></svg>
-              </div>
-            </div>
-            <div id="panel-creative" class="hidden grid sm:grid-cols-3 gap-4">
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">24</div><div class="text-sm text-base-200">Active Campaigns</div></div>
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">89%</div><div class="text-sm text-base-200">Creative Score</div></div>
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">12</div><div class="text-sm text-base-200">Variants Testing</div></div>
-            </div>
-            <div id="panel-sales" class="hidden grid sm:grid-cols-3 gap-4">
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">156</div><div class="text-sm text-base-200">Active Sequences</div></div>
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">42%</div><div class="text-sm text-base-200">Response Rate</div></div>
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">28</div><div class="text-sm text-base-200">Meetings Booked</div></div>
-            </div>
-            <div id="panel-reception" class="hidden grid sm:grid-cols-3 gap-4">
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">98%</div><div class="text-sm text-base-200">Call Resolution</div></div>
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">342</div><div class="text-sm text-base-200">Tickets Deflected</div></div>
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">4.8/5</div><div class="text-sm text-base-200">Satisfaction</div></div>
-            </div>
-            <div id="panel-finance" class="hidden grid sm:grid-cols-3 gap-4">
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">$2.4M</div><div class="text-sm text-base-200">Monthly Revenue</div></div>
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">$48</div><div class="text-sm text-base-200">CPO</div></div>
-              <div class="rounded-xl bg-base-900 p-4 border border-base-900"><div class="text-accent text-2xl font-bold">3.1×</div><div class="text-sm text-base-200">LTV:CAC</div></div>
-            </div>
-
-            <!-- Optional embedded frame demo (replace src when you have it) -->
-            <div class="mt-6 rounded-xl border border-base-900 overflow-hidden">
-              <div class="bg-base-900 px-4 py-2 text-sm text-base-200">Embedded demo (optional)</div>
-              <iframe title="Dashboard Demo" src="/dashboard-demo.html" class="w-full h-72 bg-base-900" loading="lazy"></iframe>
-            </div>
-          </div>
+        <div class="mt-6 rounded-xl border border-base-900 overflow-hidden">
+          <div class="bg-base-900 px-4 py-2 text-sm text-base-200">Embedded demo (optional)</div>
+          <iframe title="Dashboard Demo" src="/dashboard-demo.html" class="w-full h-72 bg-base-900" loading="lazy"></iframe>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- PRICING & ELIGIBILITY -->
-    <section id="pricing" class="py-16 border-t border-base-900">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Pricing & Eligibility</h2>
+<!-- PRICING & ELIGIBILITY -->
+<section id="pricing" class="py-16 border-t border-base-900">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Pricing & Eligibility</h2>
 
-        <!-- Who it's for / not for -->
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="rounded-2xl bg-base-900 p-6">
-            <h3 class="font-bold mb-3">Who It’s For</h3>
-            <ul class="text-sm text-base-200 space-y-2 list-disc ml-5">
-              <li>$100k–$50M revenue</li>
-              <li>Paid media active or scaling</li>
-              <li>Wants owner‑controlled data & speed</li>
-            </ul>
-          </div>
-          <div class="rounded-2xl bg-base-900 p-6">
-            <h3 class="font-bold mb-3">Who It’s Not For</h3>
-            <ul class="text-sm text-base-200 space-y-2 list-disc ml-5">
-              <li>No budget for implementation</li>
-              <li>No product‑market fit</li>
-              <li>Hoping for set‑and‑forget magic</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Packages -->
-        <div class="mt-8 grid md:grid-cols-2 gap-6">
-          <div class="rounded-2xl bg-base-900 p-8 border border-base-900">
-            <h3 class="text-xl font-bold mb-1">Foundation — Operator Starter</h3>
-            <p class="text-2xl font-extrabold text-accent mb-4">$10,000</p>
-            <ul class="text-sm text-base-200 space-y-2">
-              <li>Mac Studio <strong>Operator</strong> device delivered & configured</li>
-              <li><strong>Operator OS</strong> + Data Spine (local ETL, schema, audit/consent)</li>
-              <li>Base connectors + Daily Operator Briefing</li>
-              <li><strong>Marketplace access</strong> to install HQ automations (à la carte)</li>
-              <li><em>No bespoke automations included</em> in this tier</li>
-            </ul>
-            <button class="mt-6 w-full bg-accent text-black py-3 rounded-2xl font-medium hover:shadow-glow" onclick="openCalendly(event)" data-location="pricing-foundation">Get Foundation</button>
-          </div>
-
-          <div class="rounded-2xl bg-base-900 p-8 border-2 border-accent">
-            <div class="inline-block mb-3 px-3 py-1 rounded-full bg-accent text-black text-xs font-bold">RECOMMENDED</div>
-            <h3 class="text-xl font-bold mb-1">Operator — Bespoke Build</h3>
-            <p class="text-2xl font-extrabold text-accent mb-4">$35,000–$100,000+</p>
-            <ul class="text-sm text-base-200 space-y-2">
-              <li>Everything in Foundation</li>
-              <li>White‑glove discovery & workflow mapping</li>
-              <li>Custom HQ automations purpose‑built for your stack</li>
-              <li>Deeper integrations (custom APIs, webhooks, real‑time eventing)</li>
-              <li>Priority support & implementation oversight</li>
-            </ul>
-            <div class="mt-4 text-xs text-base-200 bg-base-950 border border-base-900 rounded-xl p-3">
-              <div class="font-semibold mb-1">How bespoke pricing is determined</div>
-              <div class="grid grid-cols-2 gap-x-4 gap-y-1">
-                <span>Integrations & custom APIs</span>
-                <span>Data volume & real‑time</span>
-                <span>Channels (voice/chat/email/paid)</span>
-                <span>Compliance requirements</span>
-                <span>Scale & seats (SSO/RBAC)</span>
-                <span>Local model size/latency</span>
-                <span>SLA & timeline intensity</span>
-              </div>
-            </div>
-            <button class="mt-6 w-full bg-accent text-black py-3 rounded-2xl font-medium hover:shadow-glow" onclick="openCalendly(event)" data-location="pricing-operator">Get Custom Quote</button>
-          </div>
-        </div>
-
-        <!-- Agency pricing -->
-        <div class="mt-8 rounded-2xl bg-base-900 p-8">
-          <h3 class="text-xl font-bold mb-2">Agency — Hybrid Performance</h3>
-          <ul class="text-sm text-base-200 space-y-1">
-            <li>Retainer: <strong>$500–$20,000/mo</strong> (complexity & volume)</li>
-            <li>Performance fee: <strong>10%</strong> of revenue attributable to our marketing efforts (per agreed attribution framework)</li>
-            <li>Scope: strategy, creative, media buying, CRO, experiments, governance</li>
-            <li>Access: proprietary HQ for campaign insights & content generation</li>
-          </ul>
-          <p class="text-xs text-base-700 mt-3">We define attribution windows, included channels, and holdout logic in the MSA for transparency.</p>
-        </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl bg-base-900 p-6">
+        <h3 class="font-bold mb-3">Who It’s For</h3>
+        <ul class="text-sm text-base-200 space-y-2 list-disc ml-5">
+          <li>$100k–$50M revenue</li>
+          <li>Paid media active or scaling</li>
+          <li>Wants owner‑controlled data & speed</li>
+        </ul>
       </div>
-    </section>
+      <div class="rounded-2xl bg-base-900 p-6">
+        <h3 class="font-bold mb-3">Who It’s Not For</h3>
+        <ul class="text-sm text-base-200 space-y-2 list-disc ml-5">
+          <li>No budget for implementation</li>
+          <li>No product‑market fit</li>
+          <li>Hoping for set‑and‑forget magic</li>
+        </ul>
+      </div>
+    </div>
 
-    <!-- RISK & TRUST (single on‑premises mention) -->
-    <section id="risk" class="py-16 border-t border-base-900">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Risk & Trust</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="rounded-2xl bg-base-900 p-8">
-            <h3 class="font-bold text-accent mb-4">Data Sovereignty</h3>
-            <ul class="text-sm text-base-200 space-y-2 list-disc ml-5">
-              <li>Local install on your <em>on‑premises</em> hardware (Mac Studio Operator)</li>
-              <li>Local model mode: inference without external API calls</li>
-              <li>Role‑based access with audit trails & consent logs</li>
-            </ul>
-          </div>
-          <div class="rounded-2xl bg-base-900 p-8">
-            <h3 class="font-bold text-accent mb-4">Security & Uptime</h3>
-            <ul class="text-sm text-base-200 space-y-2 list-disc ml-5">
-              <li>Encryption in transit/at rest where applicable</li>
-              <li>Transparent SLAs; emergency response target: 2 hours</li>
-              <li>Change control & observability on every HQ</li>
-            </ul>
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl bg-base-900 p-8 border border-base-900">
+        <h3 class="text-xl font-bold mb-1">Foundation — Operator Starter</h3>
+        <p class="text-2xl font-extrabold text-accent mb-4">$10,000</p>
+        <ul class="text-sm text-base-200 space-y-2">
+          <li>Mac Studio <strong>Operator</strong> device delivered & configured</li>
+          <li><strong>Operator OS</strong> + Data Spine (local ETL, schema, audit/consent)</li>
+          <li>Base connectors + Daily Operator Briefing</li>
+          <li><strong>Marketplace access</strong> to install HQ automations (à la carte)</li>
+          <li><em>No bespoke automations included</em> in this tier</li>
+        </ul>
+        <button class="mt-6 w-full bg-accent text-black py-3 rounded-2xl font-medium hover:shadow-glow" onclick="openBooking(event)" data-location="pricing-foundation">Get Foundation</button>
+      </div>
+
+      <div class="rounded-2xl bg-base-900 p-8 border-2 border-accent">
+        <div class="inline-block mb-3 px-3 py-1 rounded-full bg-accent text-black text-xs font-bold">RECOMMENDED</div>
+        <h3 class="text-xl font-bold mb-1">Operator — Bespoke Build</h3>
+        <p class="text-2xl font-extrabold text-accent mb-4">$35,000–$100,000+</p>
+        <ul class="text-sm text-base-200 space-y-2">
+          <li>Everything in Foundation</li>
+          <li>White‑glove discovery & workflow mapping</li>
+          <li>Custom HQ automations purpose‑built for your stack</li>
+          <li>Deeper integrations (custom APIs, webhooks, real‑time eventing)</li>
+          <li>Priority support & implementation oversight</li>
+        </ul>
+        <div class="mt-4 text-xs text-base-200 bg-base-950 border border-base-900 rounded-xl p-3">
+          <div class="font-semibold mb-1">How bespoke pricing is determined</div>
+          <div class="grid grid-cols-2 gap-x-4 gap-y-1">
+            <span>Integrations & custom APIs</span>
+            <span>Data volume & real‑time</span>
+            <span>Channels (voice/chat/email/paid)</span>
+            <span>Compliance requirements</span>
+            <span>Scale & seats (SSO/RBAC)</span>
+            <span>Local model size/latency</span>
+            <span>SLA & timeline intensity</span>
           </div>
         </div>
+        <button class="mt-6 w-full bg-accent text-black py-3 rounded-2xl font-medium hover:shadow-glow" onclick="openBooking(event)" data-location="pricing-operator">Get Custom Quote</button>
       </div>
-    </section>
+    </div>
 
-    <!-- FAQ -->
-    <section id="faq" class="py-16 border-t border-base-900">
-      <div class="max-w-4xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-        <div class="space-y-3">
-          <!-- FAQ item template -->
-          <div class="rounded-xl bg-base-900 border border-base-900">
-            <button class="w-full text-left px-5 py-4 flex items-center justify-between" aria-expanded="false" onclick="toggleAccordion(this)">
-              <span class="font-medium">Will this replace staff?</span>
-              <span>▾</span>
-            </button>
-            <div class="px-5 pb-5 hidden text-sm text-base-200">It replaces repetitive tasks and augments your team. Most clients reallocate staff to higher‑value activities.</div>
-          </div>
-          <div class="rounded-xl bg-base-900 border border-base-900">
-            <button class="w-full text-left px-5 py-4 flex items-center justify-between" aria-expanded="false" onclick="toggleAccordion(this)">
-              <span class="font-medium">What does “HQ” mean?</span>
-              <span>▾</span>
-            </button>
-            <div class="px-5 pb-5 hidden text-sm text-base-200">A packaged automation workspace (Ad Ops HQ, Creative HQ, etc.) with agents, dashboards, and playbooks.</div>
-          </div>
-          <div class="rounded-xl bg-base-900 border border-base-900">
-            <button class="w-full text-left px-5 py-4 flex items-center justify-between" aria-expanded="false" onclick="toggleAccordion(this)">
-              <span class="font-medium">How fast to first value?</span>
-              <span>▾</span>
-            </button>
-            <div class="px-5 pb-5 hidden text-sm text-base-200">Foundation install + first automations live within 2–4 weeks, followed by a 30‑day sprint.</div>
-          </div>
-          <div class="rounded-xl bg-base-900 border border-base-900">
-            <button class="w-full text-left px-5 py-4 flex items-center justify-between" aria-expanded="false" onclick="toggleAccordion(this)">
-              <span class="font-medium">What happens if we already use Hyros/Triple Whale/etc.?</span>
-              <span>▾</span>
-            </button>
-            <div class="px-5 pb-5 hidden text-sm text-base-200">We integrate with your tools. Operator normalizes data and enhances attribution.</div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="mt-8 rounded-2xl bg-base-900 p-8">
+      <h3 class="text-xl font-bold mb-2">Agency — Hybrid Performance</h3>
+      <ul class="text-sm text-base-200 space-y-1">
+        <li>Retainer: <strong>$500–$20,000/mo</strong> (complexity & volume)</li>
+        <li>Performance fee: <strong>10%</strong> of revenue attributable to our marketing efforts (per agreed attribution framework)</li>
+        <li>Scope: strategy, creative, media buying, CRO, experiments, governance</li>
+        <li>Access: proprietary HQ for campaign insights & content generation</li>
+      </ul>
+      <p class="text-xs text-base-700 mt-3">We define attribution windows, included channels, and holdout logic in the MSA for transparency.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- FINAL CTA -->
-    <section class="py-16 border-t border-base-900">
-      <div class="max-w-5xl mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold">If you’re serious about compounding gains, install your Operator and let our team run the playbook.</h2>
-        <p class="mt-2 text-base-200">Limited onboarding slots available this month.</p>
-        <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button class="bg-accent text-black font-bold text-lg px-8 py-4 rounded-2xl hover:shadow-glow" onclick="openCalendly(event)" data-location="final">Book My Strategy Call</button>
-          <button class="border border-accent text-accent font-bold text-lg px-8 py-4 rounded-2xl hover:bg-accent hover:text-black" onclick="openGrowthPlan()">Get My Custom Growth Plan</button>
-        </div>
+<!-- RISK & TRUST (single on‑premises mention) -->
+<section id="risk" class="py-16 border-t border-base-900">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Risk & Trust</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl bg-base-900 p-8">
+        <h3 class="font-bold text-accent mb-4">Data Sovereignty</h3>
+        <ul class="text-sm text-base-200 space-y-2 list-disc ml-5">
+          <li>Local install on your <em>on‑premises</em> hardware (Mac Studio Operator)</li>
+          <li>Local model mode: inference without external API calls</li>
+          <li>Role‑based access with audit trails & consent logs</li>
+        </ul>
       </div>
-    </section>
+      <div class="rounded-2xl bg-base-900 p-8">
+        <h3 class="font-bold text-accent mb-4">Security & Uptime</h3>
+        <ul class="text-sm text-base-200 space-y-2 list-disc ml-5">
+          <li>Encryption in transit/at rest where applicable</li>
+          <li>Transparent SLAs; emergency response target: 2 hours</li>
+          <li>Change control & observability on every HQ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-16 border-t border-base-900">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+    <div class="space-y-3">
+      <div class="rounded-xl bg-base-900 border border-base-900">
+        <button class="w-full text-left px-5 py-4 flex items-center justify-between" aria-expanded="false" onclick="toggleAccordion(this)">
+          <span class="font-medium">Will this replace staff?</span>
+          <span>▾</span>
+        </button>
+        <div class="px-5 pb-5 hidden text-sm text-base-200">It replaces repetitive tasks and augments your team. Most clients reallocate staff to higher‑value activities.</div>
+      </div>
+      <div class="rounded-xl bg-base-900 border border-base-900">
+        <button class="w-full text-left px-5 py-4 flex items-center justify-between" aria-expanded="false" onclick="toggleAccordion(this)">
+          <span class="font-medium">What does “HQ” mean?</span>
+          <span>▾</span>
+        </button>
+        <div class="px-5 pb-5 hidden text-sm text-base-200">A packaged automation workspace (Ad Ops HQ, Creative HQ, etc.) with agents, dashboards, and playbooks.</div>
+      </div>
+      <div class="rounded-xl bg-base-900 border border-base-900">
+        <button class="w-full text-left px-5 py-4 flex items-center justify-between" aria-expanded="false" onclick="toggleAccordion(this)">
+          <span class="font-medium">How fast to first value?</span>
+          <span>▾</span>
+        </button>
+        <div class="px-5 pb-5 hidden text-sm text-base-200">Foundation install + first automations live within 2–4 weeks, followed by a 30‑day sprint.</div>
+      </div>
+      <div class="rounded-xl bg-base-900 border border-base-900">
+        <button class="w-full text-left px-5 py-4 flex items-center justify-between" aria-expanded="false" onclick="toggleAccordion(this)">
+          <span class="font-medium">What happens if we already use Hyros/Triple Whale/etc.?</span>
+          <span>▾</span>
+        </button>
+        <div class="px-5 pb-5 hidden text-sm text-base-200">We integrate with your tools. Operator normalizes data and enhances attribution.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-16 border-t border-base-900">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold">If you’re serious about compounding gains, install your Operator and let our team run the playbook.</h2>
+    <p class="mt-2 text-base-200">Limited onboarding slots available this month.</p>
+    <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <button class="bg-accent text-black font-bold text-lg px-8 py-4 rounded-2xl hover:shadow-glow" onclick="openBooking(event)" data-location="final">Book My Strategy Call</button>
+      <button class="border border-accent text-accent font-bold text-lg px-8 py-4 rounded-2xl hover:bg-accent hover:text-black" onclick="openGrowthPlan()">Get My Custom Growth Plan</button>
+    </div>
+  </div>
+</section>
+
   </main>
 
+
   <!-- Footer -->
+
+
   <footer class="bg-base-950 border-t border-base-900 py-10">
     <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8">
       <div>
@@ -662,14 +698,20 @@
     <div class="mt-8 text-center text-xs text-base-700">© 2025 AdSpend + OperatorHQ. All rights reserved.</div>
   </footer>
 
+
   <!-- Mobile sticky CTA -->
+
+
   <div class="fixed bottom-0 left-0 right-0 md:hidden border-t border-base-900 bg-base-950/95 backdrop-blur p-3 z-40">
     <div class="max-w-7xl mx-auto px-2">
-      <button class="w-full bg-accent text-black py-3 rounded-2xl font-medium" onclick="openCalendly(event)" data-location="mobile-sticky">Book Strategy Call</button>
+      <button class="w-full bg-accent text-black py-3 rounded-2xl font-medium" onclick="openBooking(event)" data-location="mobile-sticky">Book Strategy Call</button>
     </div>
   </div>
 
+
   <!-- Growth Plan Modal -->
+
+
   <div id="growthModal" class="fixed inset-0 bg-black/80 hidden z-50" role="dialog" aria-modal="true" aria-labelledby="growthTitle">
     <div class="min-h-screen w-full flex items-center justify-center p-4" onclick="if(event.target===this) closeGrowthPlan()">
       <div class="bg-base-950 border border-base-900 rounded-2xl max-w-2xl w-full max-h-[92vh] overflow-y-auto">
@@ -731,8 +773,6 @@
                 </select>
               </label>
             </div>
-
-            <!-- Tracking fields -->
             <input type="hidden" name="utm_source" />
             <input type="hidden" name="utm_medium" />
             <input type="hidden" name="utm_campaign" />
@@ -740,10 +780,7 @@
             <input type="hidden" name="gclid" />
             <input type="hidden" name="fbclid" />
             <input type="hidden" name="referrer" />
-
-            <!-- Honeypot -->
             <input type="text" name="fax_number" class="hidden" tabindex="-1" autocomplete="off" />
-
             <label class="inline-flex items-center gap-2 text-sm"><input type="checkbox" required /> I agree to receive communications about my growth plan.</label>
             <button class="mt-2 w-full bg-accent text-black py-3 rounded-2xl font-medium hover:shadow-glow" type="submit">Generate My Growth Plan</button>
           </div>
@@ -752,15 +789,117 @@
     </div>
   </div>
 
+
+  <!-- Booking Modal (Calendly embed placeholder) -->
+
+
+  <div id="bookingModal" class="fixed inset-0 bg-black/80 hidden z-50" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+    <div class="min-h-screen w-full flex items-center justify-center p-4" onclick="if(event.target===this) closeBooking()">
+      <div class="bg-base-950 border border-base-900 rounded-2xl max-w-3xl w-full max-h-[92vh] overflow-hidden">
+        <div class="flex items-center justify-between p-4 border-b border-base-900">
+          <h3 id="bookingTitle" class="font-bold text-xl">Book a Strategy Call</h3>
+          <button aria-label="Close" class="text-base-200" onclick="closeBooking()">✕</button>
+        </div>
+        <iframe id="bookingFrame" title="Booking" src="about:blank" class="w-full h-[70vh] bg-base-900" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Module Details / Install Wizard -->
+
+
+  <div id="moduleModal" class="fixed inset-0 bg-black/80 hidden z-50" role="dialog" aria-modal="true" aria-labelledby="moduleTitle">
+    <div class="min-h-screen w-full flex items-center justify-center p-4" onclick="if(event.target===this) closeModule()">
+      <div class="bg-base-950 border border-base-900 rounded-2xl max-w-3xl w-full max-h-[92vh] overflow-hidden">
+        <div class="flex items-center justify-between p-4 border-b border-base-900">
+          <div>
+            <h3 id="moduleTitle" class="font-bold text-xl">Module</h3>
+            <div id="moduleMeta" class="text-xs text-base-200"></div>
+          </div>
+          <button aria-label="Close" class="text-base-200" onclick="closeModule()">✕</button>
+        </div>
+        <div class="p-6 overflow-y-auto max-h-[70vh]">
+          <p id="moduleDesc" class="text-sm text-base-200 mb-4"></p>
+          <div class="grid sm:grid-cols-3 gap-3 text-xs mb-6">
+            <div><span class="text-accent">Trigger:</span> <span id="moduleTrigger"></span></div>
+            <div><span class="text-accent">Action:</span> <span id="moduleAction"></span></div>
+            <div><span class="text-accent">Success:</span> <span id="moduleSuccess"></span></div>
+          </div>
+
+
+      <!-- Stepper -->
+      <div class="mb-4 flex items-center gap-3">
+        <span id="s1" class="step-dot bg-accent text-black font-bold">1</span><span class="text-sm">Connect</span>
+        <span class="text-base-700">—</span>
+        <span id="s2" class="step-dot bg-base-900 border border-base-800">2</span><span class="text-sm">Guardrails</span>
+        <span class="text-base-700">—</span>
+        <span id="s3" class="step-dot bg-base-900 border border-base-800">3</span><span class="text-sm">Install</span>
+      </div>
+
+      <div id="step1" class="space-y-3">
+        <div class="text-sm font-semibold">Connect accounts</div>
+        <label class="flex items-center gap-2 text-sm"><input type="checkbox" class="accent-emerald-400"> Google Ads</label>
+        <label class="flex items-center gap-2 text-sm"><input type="checkbox" class="accent-emerald-400"> Meta Ads</label>
+        <label class="flex items-center gap-2 text-sm"><input type="checkbox" class="accent-emerald-400"> TikTok Ads</label>
+        <label class="flex items-center gap-2 text-sm"><input type="checkbox" class="accent-emerald-400"> YouTube</label>
+      </div>
+
+      <div id="step2" class="hidden space-y-3">
+        <div class="text-sm font-semibold">Set guardrails</div>
+        <label class="flex items-center gap-2 text-sm"><input type="checkbox" class="accent-emerald-400"> Require human approval for budget changes</label>
+        <label class="flex items-center gap-2 text-sm"><input type="checkbox" class="accent-emerald-400"> Cap daily change at <input type="number" min="0" max="100" value="15" class="w-16 rounded bg-base-900 border border-base-800 px-2 py-1">%</label>
+        <label class="flex items-center gap-2 text-sm"><input type="checkbox" class="accent-emerald-400"> Only run changes 6am–8pm local</label>
+      </div>
+
+      <div id="step3" class="hidden space-y-4">
+        <div class="text-sm font-semibold">Review & simulate install</div>
+        <ul class="text-sm text-base-200 list-disc ml-5">
+          <li>Connections: as selected</li>
+          <li>Guardrails: applied</li>
+        </ul>
+        <div class="w-full bg-base-900 border border-base-800 rounded overflow-hidden">
+          <div id="installBar" class="bg-accent text-black text-xs text-center" style="width:0%">0%</div>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-between">
+        <button id="prevBtn" class="border border-base-800 text-base-200 px-4 py-2 rounded-2xl" onclick="prevStep()" disabled>Back</button>
+        <div class="flex gap-2">
+          <button id="closeBtn" class="hidden border border-base-800 text-base-200 px-4 py-2 rounded-2xl" onclick="closeModule()">Close</button>
+          <button id="nextBtn" class="bg-accent text-black px-4 py-2 rounded-2xl" onclick="nextStep()">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+
   <!-- Toast -->
+
+
   <div id="toast" class="fixed top-4 right-4 hidden bg-accent text-black px-4 py-2 rounded-2xl shadow-glow z-50"></div>
+
 
   <script>
     // Mobile menu toggle
-    function toggleMenu(){
-      const el = document.getElementById('mobileMenu');
-      el.classList.toggle('hidden');
-    }
+    function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('hidden'); }
+
+    // Active nav highlighting
+    const sections = ['hero','why','what','how','automations','pricing','faq'];
+    const linkMap = new Map();
+    document.querySelectorAll('.nav-link').forEach(a=> linkMap.set(a.getAttribute('href').slice(1), a));
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          const id = e.target.id; document.querySelectorAll('.nav-link').forEach(a=>a.classList.remove('nav-active'));
+          const link = linkMap.get(id); if(link) link.classList.add('nav-active');
+        }
+      })
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    sections.forEach(id=>{ const el = document.getElementById(id); if(el) io.observe(el); });
 
     // UTM helpers
     function getParams(){
@@ -775,90 +914,100 @@
         referrer: document.referrer || ''
       }
     }
-    function setUTMs(form){
-      const p = getParams();
-      Object.keys(p).forEach(k=>{ const input = form.querySelector(`[name="${k}"]`); if(input) input.value = p[k]; });
-    }
+    function setUTMs(form){ const p = getParams(); Object.keys(p).forEach(k=>{ const i=form.querySelector(`[name="${k}"]`); if(i) i.value=p[k]; }); }
 
-    // Calendly / booking stub (replace URL and append UTMs)
-    function openCalendly(e){
+    // Booking (Calendly) embed
+    function openBooking(e){
       const qs = new URLSearchParams(getParams()).toString();
-      // track
+      const modal = document.getElementById('bookingModal');
+      const frame = document.getElementById('bookingFrame');
+      // TODO: replace with your Calendly link below
+      frame.src = `https://calendly.com/YOUR-LINK?${qs}`;
+      modal.classList.remove('hidden'); document.body.style.overflow = 'hidden';
       console.log('book_call_click', (e && e.currentTarget && e.currentTarget.dataset && e.currentTarget.dataset.location) || 'unknown');
-      // window.open(`https://calendly.com/YOUR-LINK?${qs}`, '_blank');
-      showToast('Redirecting to booking…');
     }
+    function closeBooking(){ document.getElementById('bookingModal').classList.add('hidden'); document.body.style.overflow = ''; }
 
     // Growth plan modal
     function openGrowthPlan(){
       const m = document.getElementById('growthModal');
-      m.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      // seed UTMs
+      m.classList.remove('hidden'); document.body.style.overflow = 'hidden';
       setUTMs(document.getElementById('growthForm'));
     }
-    function closeGrowthPlan(){
-      document.getElementById('growthModal').classList.add('hidden');
-      document.body.style.overflow = '';
-    }
+    function closeGrowthPlan(){ document.getElementById('growthModal').classList.add('hidden'); document.body.style.overflow = ''; }
 
     // Dashboard modal
-    function openDashboard(){
-      document.getElementById('dashModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeDashboard(){
-      document.getElementById('dashModal').classList.add('hidden');
-      document.body.style.overflow = '';
-    }
+    function openDashboard(){ document.getElementById('dashModal').classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    function closeDashboard(){ document.getElementById('dashModal').classList.add('hidden'); document.body.style.overflow = ''; }
 
     // Switch dashboard panels
     function switchDash(name, btn){
       const panels = ['adops','creative','sales','reception','finance'];
-      panels.forEach(p=>{
-        document.getElementById('panel-'+p).classList.toggle('hidden', p!==name);
-      });
-      document.querySelectorAll('.dash-tab').forEach(b=>{
-        b.classList.remove('text-accent','border-b-2','border-accent','active');
-        b.classList.add('text-base-200');
-      });
-      btn.classList.add('text-accent','border-b-2','border-accent','active');
-      btn.classList.remove('text-base-200');
+      panels.forEach(p=> document.getElementById('panel-'+p).classList.toggle('hidden', p!==name));
+      document.querySelectorAll('.dash-tab').forEach(b=>{ b.classList.remove('text-accent','border-b-2','border-accent','active'); b.classList.add('text-base-200'); });
+      btn.classList.add('text-accent','border-b-2','border-accent','active'); btn.classList.remove('text-base-200');
     }
 
     // FAQ accordion
     function toggleAccordion(button){
       const expanded = button.getAttribute('aria-expanded') === 'true';
       button.setAttribute('aria-expanded', String(!expanded));
-      const panel = button.nextElementSibling;
-      panel.classList.toggle('hidden');
+      const panel = button.nextElementSibling; panel.classList.toggle('hidden');
     }
 
     // Growth plan submit
     function submitGrowthPlan(ev){
-      ev.preventDefault();
-      const form = ev.currentTarget;
-      // honeypot
-      if(form.fax_number && form.fax_number.value) return;
+      ev.preventDefault(); const form = ev.currentTarget; if(form.fax_number && form.fax_number.value) return; // honeypot
       const data = Object.fromEntries(new FormData(form).entries());
       console.log('growthplan_submit', data);
-      closeGrowthPlan();
-      showToast('Growth plan submitted! Check your email shortly.');
-      form.reset();
+      closeGrowthPlan(); showToast('Growth plan submitted! Check your email shortly.'); form.reset();
     }
 
     // Toast helper
-    function showToast(msg){
-      const el = document.getElementById('toast');
-      el.textContent = msg;
-      el.classList.remove('hidden');
-      setTimeout(()=> el.classList.add('hidden'), 2200);
+    function showToast(msg){ const el = document.getElementById('toast'); el.textContent = msg; el.classList.remove('hidden'); setTimeout(()=> el.classList.add('hidden'), 2200); }
+
+    // Module modal & wizard logic
+    let moduleState = { step: 1 };
+    function openModule(ev){
+      ev.stopPropagation();
+      const card = ev.currentTarget.closest('.module-card');
+      const name = card.dataset.name; const desc = card.dataset.desc; const trig = card.dataset.trigger; const act = card.dataset.action; const suc = card.dataset.success; const price = card.dataset.price; const setup = card.dataset.setup;
+      document.getElementById('moduleTitle').textContent = name;
+      document.getElementById('moduleDesc').textContent = desc;
+      document.getElementById('moduleTrigger').textContent = trig;
+      document.getElementById('moduleAction').textContent = act;
+      document.getElementById('moduleSuccess').textContent = suc;
+      document.getElementById('moduleMeta').textContent = `${price || ''} · Setup ${setup || ''}`;
+      setStep(1);
+      document.getElementById('moduleModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';
+    }
+    // Also allow clicking anywhere on the card
+    document.addEventListener('click', (e)=>{
+      const m = e.target.closest('.module-card');
+      if(m && !e.target.closest('button')){
+        const fakeBtn = m.querySelector('button'); if(fakeBtn) fakeBtn.click();
+      }
+    });
+    function closeModule(){ document.getElementById('moduleModal').classList.add('hidden'); document.body.style.overflow = ''; }
+    function setStep(n){ moduleState.step = n; ['step1','step2','step3'].forEach((id,i)=>{ document.getElementById(id).classList.toggle('hidden', i!==n-1); });
+      document.getElementById('prevBtn').disabled = (n===1); document.getElementById('nextBtn').textContent = (n===3? 'Install Now' : 'Next');
+      // Stepper dots
+      document.getElementById('s1').className = 'step-dot ' + (n>=1? 'bg-accent text-black font-bold':'bg-base-900 border border-base-800');
+      document.getElementById('s2').className = 'step-dot ' + (n>=2? 'bg-accent text-black font-bold':'bg-base-900 border border-base-800');
+      document.getElementById('s3').className = 'step-dot ' + (n>=3? 'bg-accent text-black font-bold':'bg-base-900 border border-base-800');
+      document.getElementById('closeBtn').classList.toggle('hidden', n!==3);
+    }
+    function nextStep(){ if(moduleState.step<3){ setStep(moduleState.step+1); } else { simulateInstall(); } }
+    function prevStep(){ if(moduleState.step>1){ setStep(moduleState.step-1); } }
+    function simulateInstall(){
+      const bar = document.getElementById('installBar'); let p = 0; document.getElementById('nextBtn').disabled = true; document.getElementById('prevBtn').disabled = true;
+      const t = setInterval(()=>{ p += Math.random()*20+10; if(p>=100){ p=100; clearInterval(t); bar.style.width=p+'%'; bar.textContent='Installed'; showToast('Module installed to your Operator.'); document.getElementById('nextBtn').disabled=false; document.getElementById('prevBtn').disabled=false; document.getElementById('nextBtn').textContent='Open in Dashboard'; document.getElementById('nextBtn').onclick=()=>{ closeModule(); openDashboard(); }; return; } bar.style.width=p+'%'; bar.textContent=Math.floor(p)+'%'; }, 450);
     }
 
     // Global listeners
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === 'Escape'){ closeGrowthPlan(); closeDashboard(); }
-    });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape'){ closeGrowthPlan(); closeDashboard(); closeBooking(); closeModule(); } });
   </script>
+
+
 </body>
 </html>
